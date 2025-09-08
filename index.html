@@ -863,38 +863,96 @@
 </section>
 
 <!-- ===== Triple Guarantee ===== -->
-<section class="guarantee" id="guarantee">
+<!-- ============== TRIPLE GUARANTEE (Premium Layout) ============== -->
+<section id="guarantee" style="background:#f8fafc;padding:36px 0">
   <div class="g-wrap">
     <h2 class="g-title">Our Triple Guarantee</h2>
 
-    <div class="g-table" role="table" aria-label="iiTuitions Guarantees">
+    <div class="g-card">
       <!-- Row 1 -->
-      <div class="g-row" role="row">
-        <div class="g-left" role="cell"><span class="g-ic">💰</span>30-Day Money-Back</div>
-        <div class="g-right" role="cell">
-          If you’re not satisfied after joining, get a <b>full refund within 30 days</b>
-          — no questions asked.
+      <div class="g-row">
+        <div class="g-left">
+          <span class="g-ico">💰</span>
+          <h3 class="g-head">30-Day Money-Back</h3>
         </div>
+        <p class="g-copy">
+          If you’re not satisfied after joining, get a <b>full refund within 30 days</b> — no questions asked.
+        </p>
       </div>
+
       <!-- Row 2 -->
-      <div class="g-row" role="row">
-        <div class="g-left" role="cell"><span class="g-ic">📊</span>Measurable Progress</div>
-        <div class="g-right" role="cell">
-          If promised milestones aren’t met, <b>we refund your fees</b>.
-          Plans and outcomes are reviewed every 2 weeks.
+      <div class="g-row">
+        <div class="g-left">
+          <span class="g-ico">📊</span>
+          <h3 class="g-head">Measurable Progress</h3>
         </div>
+        <p class="g-copy">
+          If promised milestones aren’t met, <b>we refund your fees</b>. Plans and outcomes are reviewed every <b>2 weeks</b>.
+        </p>
       </div>
+
       <!-- Row 3 -->
-      <div class="g-row" role="row">
-        <div class="g-left" role="cell"><span class="g-ic">🎥</span>Commitment Fulfillment</div>
-        <div class="g-right" role="cell">
-          Every session is <b>recorded</b>, reviewed, and shared in weekly parent updates.
-          If we miss a promise, <b>you don’t pay for it</b>.
+      <div class="g-row">
+        <div class="g-left">
+          <span class="g-ico">🎥</span>
+          <h3 class="g-head">Commitment Fulfillment</h3>
         </div>
+        <p class="g-copy">
+          Every session is <b>recorded</b>, reviewed, and shared in weekly parent updates. If we miss a promise, <b>you don’t pay for it</b>.
+        </p>
       </div>
     </div>
+
+    <!-- (Optional) trust microcopy under the card -->
+    <!-- <p class="g-note">Clear. Simple. Easy to scan.</p> -->
   </div>
 </section>
+
+<style>
+  /* wrapper */
+  #guarantee .g-wrap{max-width:1100px;margin:0 auto;padding:0 14px}
+  #guarantee .g-title{
+    text-align:center;font-weight:900;color:#0b1220;
+    font-size:clamp(24px,4.4vw,44px);margin-bottom:18px
+  }
+
+  /* big rounded card */
+  #guarantee .g-card{
+    background:#fff;border:1px solid #e9eef5;border-radius:22px;
+    box-shadow:0 24px 60px rgba(2,6,23,.06);overflow:hidden
+  }
+
+  /* rows */
+  #guarantee .g-row{
+    display:grid;grid-template-columns:280px 1fr;gap:18px;
+    align-items:center;padding:26px 26px 26px 26px;border-top:1px solid #eef2f7
+  }
+  #guarantee .g-row:first-child{border-top:none}
+
+  /* left side: icon + heading */
+  #guarantee .g-left{display:flex;align-items:center;gap:14px}
+  #guarantee .g-ico{
+    width:44px;height:44px;display:grid;place-items:center;border-radius:12px;
+    background:#f3f6fb;border:1px solid #e6edf6;font-size:22px
+  }
+  #guarantee .g-head{margin:0;font-weight:900;font-size:clamp(16px,2.2vw,24px);color:#0b1220}
+
+  /* right copy */
+  #guarantee .g-copy{
+    margin:0;color:#0f172a;font-size:clamp(15px,2vw,20px);line-height:1.65
+  }
+
+  /* optional note */
+  #guarantee .g-note{color:#64748b;text-align:center;margin-top:10px}
+
+  /* mobile */
+  @media (max-width:820px){
+    #guarantee .g-row{grid-template-columns:1fr;align-items:flex-start;padding:20px}
+    #guarantee .g-left{margin-bottom:4px}
+    #guarantee .g-ico{width:40px;height:40px;font-size:20px}
+  }
+</style>
+
 <!-- ================== /PROGRESS + TRIPLE GUARANTEE ================== -->
 
 
