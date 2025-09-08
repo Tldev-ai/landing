@@ -988,6 +988,87 @@
 
 
 
+</section>
+
+<!-- Floating buttons (place BEFORE the script) -->
+<a class="float-btn float-wa"
+   href="https://wa.me/919010031000?text=Hi%20IITuitions%2C%20please%20book%20my%20free%20assessment"
+   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<a class="float-btn float-cta"
+   href="https://wa.me/919010031000?text=Hi%20IITuitions%2C%20please%20book%20my%20free%20assessment"
+   target="_blank" rel="noopener" aria-label="Book Free Assessment">📋 Book Free Assessment</a>
+
+<!-- Floating button styles (now inside a proper <style>) -->
+<style>
+  /* Floating buttons — fixed, mobile-safe */
+  .float-btn{
+    position:fixed;z-index:60;bottom:16px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;box-shadow:0 8px 24px rgba(0,0,0,.25);
+    cursor:pointer;transition:.2s;border-radius:999px;
+  }
+  /* WhatsApp: small green circle with emoji only */
+  .float-wa{
+    left:16px;width:56px;height:56px;background:#25D366;color:#fff;
+    border:none;border-radius:50%;font-size:26px;line-height:1;
+  }
+  /* Book Free Assessment: compact pill */
+  .float-cta{
+    right:16px;background:#fff;color:#000;padding:14px 20px;
+    font-size:16px;border:2px solid rgba(0,0,0,.08);
+  }
+  .float-cta:hover{background:#f5f5f5;transform:scale(1.03)}
+  .float-wa:hover{transform:scale(1.08)}
+  /* Keep content clear of floats at bottom of page */
+  #final-cta{padding-bottom:130px}
+  @media (max-width:520px){
+    .float-wa{width:50px;height:50px;font-size:24px;bottom:14px;left:14px}
+    .float-cta{padding:12px 16px;font-size:14px;right:14px;max-width:72%}
+  }
+</style>
+
+<!-- Countdown script (HTML-free!) -->
+<script>
+  // ===== Countdown (shared for both timers) =====
+  const deadlineISO = new Date(Date.now() + 2*24*60*60*1000).toISOString();
+
+  const DLINE = new Date(deadlineISO);
+  const bigEl = document.getElementById('timerBig');
+  const smallEl = document.getElementById('timerSmall');
+  const daysLeftEl = document.getElementById('daysLeft');
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function tick(){
+    const now = new Date();
+    let diff = Math.max(0, DLINE - now);
+    const d = Math.floor(diff / (24*60*60*1000)); diff -= d*24*60*60*1000;
+    const h = Math.floor(diff / (60*60*1000));    diff -= h*60*60*1000;
+    const m = Math.floor(diff / (60*1000));       diff -= m*60*1000;
+    const s = Math.floor(diff / 1000);
+
+    const hh = pad(d*24 + h);
+    const display = `${hh}:${pad(m)}:${pad(s)}`;
+    bigEl.textContent = display;
+    smallEl.textContent = display;
+    daysLeftEl.textContent = Math.max(0, d);
+
+    if (DLINE - now <= 0){
+      clearInterval(tmr);
+      bigEl.textContent = '00:00:00';
+      smallEl.textContent = '00:00:00';
+    }
+  }
+  const tmr = setInterval(tick, 1000); tick();
+
+  // Set month label (e.g., "September")
+  const month = DLINE.toLocaleString(undefined, { month:'long' });
+  document.getElementById('batchLabel').textContent = month;
+</script>
+
+
+
+
   
 
   
