@@ -186,6 +186,50 @@
     th{background:#f8fafc;text-align:left;padding:10px 14px}
     td{padding:10px 14px;border-bottom:1px solid #eef2f7}
 
+    /* ===== Google Reviews ===== */
+
+/* Ratings strip (stars + 4.9/5 + count) */
+.ratings-strip{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:#fff;border:1px solid #eef2f7;border-radius:18px;
+  padding:10px 14px;box-shadow:0 6px 18px rgba(0,0,0,.06);
+  max-width:720px;margin:0 auto 14px;font-weight:800;color:#111;
+}
+.ratings-strip .stars{font-size:18px;letter-spacing:1px}
+.ratings-strip small{font-weight:600;color:#475569}
+
+/* 3 screenshot row (optional—use if you prefer CSS over inline styles) */
+.shots3{max-width:900px;margin:0 auto 14px}
+.shots3-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.shots3-grid img{width:100%;border-radius:12px;background:#f3f4f6}
+
+/* Reviews carousel */
+.reviews-rail{position:relative}
+.reviews{
+  display:flex;gap:16px;overflow-x:auto;padding:6px 2px 14px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch
+}
+.reviews::-webkit-scrollbar{display:none}
+.rev-card{
+  scroll-snap-align:start;min-width:clamp(260px,78vw,380px);
+  background:#fff;border:1px solid #eef2f7;border-radius:18px;padding:14px;
+  box-shadow:0 10px 26px rgba(0,0,0,.06)
+}
+.rev-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.rev-avatar{width:44px;height:44px;border-radius:999px;object-fit:cover;background:#f1f5f9}
+.rev-name{font-weight:900}
+.rev-meta{font-size:12px;color:#64748b}
+.rev-stars{color:#f59e0b;font-size:14px}
+.rev-body{color:#111827}
+
+/* Mobile tweaks */
+@media (max-width:768px){
+  .ratings-strip{padding:8px 12px}
+  .rev-card{min-width:84vw}
+  .shots3-grid{grid-template-columns:1fr} /* stack screenshots on small screens */
+}
+
+
     /* Footer */
     .footer{background:#000;color:#fff;margin-top:30px}
     .foot-top{padding:24px 0}
@@ -582,7 +626,93 @@
     </div>
   </div>
 </section>
+  
 
+
+<!-- ========== GOOGLE REVIEWS (3 screenshots + cards) ========== -->
+<section id="reviews" style="padding:28px 0;background:#f8fafc">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:12px">Parents Love iiTuitions</h2>
+
+    <!-- Ratings strip -->
+    <div class="ratings-strip">
+      <span class="stars">⭐️⭐️⭐️⭐️⭐️</span>
+      <span>4.9/5</span>
+      <small>• 200+ Google reviews</small>
+    </div>
+
+    <!-- Screenshot strip (exactly 3) -->
+    <div class="shots3" style="
+      display:grid;grid-template-columns:1fr;gap:10px;max-width:900px;margin:0 auto 14px;
+    ">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+        <!-- TODO: replace these three src URLs with your real Google review screenshot images -->
+        <img src="https://via.placeholder.com/900x600?text=Review+Screenshot+1" alt="Google review screenshot 1" style="width:100%;border-radius:12px;background:#f3f4f6">
+        <img src="https://via.placeholder.com/900x600?text=Review+Screenshot+2" alt="Google review screenshot 2" style="width:100%;border-radius:12px;background:#f3f4f6">
+        <img src="https://via.placeholder.com/900x600?text=Review+Screenshot+3" alt="Google review screenshot 3" style="width:100%;border-radius:12px;background:#f3f4f6">
+      </div>
+    </div>
+
+    <!-- Reviews rail (side-scroll on mobile) -->
+    <div class="reviews-rail">
+      <div class="reviews" aria-label="Google reviews">
+        <!-- Review 1 -->
+        <article class="rev-card">
+          <div class="rev-head">
+            <!-- Replace with real profile photo -->
+            <img class="rev-avatar" src="https://via.placeholder.com/88" alt="Reviewer avatar">
+            <div>
+              <div class="rev-name">Srinivas Reddy</div>
+              <div class="rev-meta">Verified Parent • May 2025</div>
+            </div>
+          </div>
+          <div class="rev-stars">⭐️⭐️⭐️⭐️⭐️</div>
+          <p class="rev-body" style="margin-top:6px">
+            Physics went from <b>48% to 90%</b> in 8 weeks. Daily updates kept us involved and confident.
+          </p>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="rev-card">
+          <div class="rev-head">
+            <img class="rev-avatar" src="https://via.placeholder.com/88" alt="Reviewer avatar">
+            <div>
+              <div class="rev-name">Meena Sharma</div>
+              <div class="rev-meta">Verified Parent • Apr 2025</div>
+            </div>
+          </div>
+          <div class="rev-stars">⭐️⭐️⭐️⭐️⭐️</div>
+          <p class="rev-body" style="margin-top:6px">
+            True <b>1-on-1 mentorship</b>. Weekly review calls + recorded classes were game changers.
+          </p>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="rev-card">
+          <div class="rev-head">
+            <img class="rev-avatar" src="https://via.placeholder.com/88" alt="Reviewer avatar">
+            <div>
+              <div class="rev-name">Arun Kumar</div>
+              <div class="rev-meta">Verified Parent • Feb 2025</div>
+            </div>
+          </div>
+          <div class="rev-stars">⭐️⭐️⭐️⭐️⭐️</div>
+          <p class="rev-body" style="margin-top:6px">
+            Faculty replacement was instant when fit wasn’t right. <b>Total transparency</b> throughout.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <!-- WhatsApp CTA -->
+    <div style="text-align:center;margin-top:16px">
+      <a class="btn btn-wa"
+         href="https://wa.me/919010031000?text=Hi%20IITuitions%2C%20please%20match%20a%20mentor%20to%20my%20child"
+         target="_blank" rel="noopener">💬 Match a mentor to my child</a>
+    </div>
+  </div>
+</section>
+<!-- ========== /GOOGLE REVIEWS ========== -->
 
   
 
