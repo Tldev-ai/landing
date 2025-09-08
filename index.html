@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>IITuitions — Transform Your Child's IIT Dreams into Reality</title>
   <meta name="description" content="Personal mentorship from IIT/NIT alumni. Only 50 students chosen yearly for true individual attention. Book a free assessment on WhatsApp.">
-
   <style>
     :root{
       --primary:#000; --primary-2:#1a1a1a;
@@ -15,14 +14,15 @@
       --wa:#25D366; --ok:#10b981; --danger:#ef4444;
     }
     *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%}
     body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     .container{max-width:1200px;margin:0 auto;padding:0 12px}
     a{text-decoration:none}
 
     /* Header */
     .site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--ring);box-shadow:0 2px 12px var(--shadow1)}
-    .header-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .logo{font-weight:900;color:#000;font-size:20px}
+    .header-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .logo{font-weight:900;color:#000;font-size:18px}
     .hamb{width:44px;height:44px;border:none;background:transparent;display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center}
     .hamb span{width:24px;height:3px;background:#000;border-radius:2px}
     .nav-actions{display:none}
@@ -32,48 +32,48 @@
     .menu.open{opacity:1;visibility:visible;transform:translateY(0)}
 
     /* Buttons */
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:26px;font-weight:800;border:2px solid transparent;cursor:pointer}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:26px;font-weight:800;border:2px solid transparent;cursor:pointer;touch-action:manipulation}
     .btn-outline{border-color:#000;color:#000}
     .btn-outline:hover{background:#000;color:#fff}
     .btn-wa{background:var(--wa);color:#fff;border-color:#1fbf57;box-shadow:0 8px 24px rgba(37,211,102,.35)}
     .btn-wa:hover{background:#20BA5A}
 
     /* Hero */
-    .hero{background:var(--accent);color:#fff;padding:40px 12px 50px;text-align:center;position:relative}
+    .hero{background:var(--accent);color:#fff;padding:32px 12px 40px;text-align:center;position:relative}
     .hero .wrap{max-width:900px;margin:0 auto}
-    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:18px}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:14px}
     .pill{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);padding:8px 10px;border-radius:14px;font-size:12px;font-weight:800}
-    .hero h1{font-size:28px;font-weight:900;margin:10px 0 12px}
-    .hero p{opacity:.95}
-    .hero-ctas{display:flex;flex-direction:column;gap:10px;margin:18px 0}
+    .hero h1{font-size:26px;font-weight:900;margin:8px 0 10px}
+    .hero p{opacity:.95;font-size:15px}
+    .hero-ctas{display:flex;flex-direction:column;gap:10px;margin:16px 0}
     .hero small{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:10px 14px;border-radius:18px;color:#111;display:inline-block}
 
     /* Trust */
-    .trust{background:#f8fafc;padding:24px 0}
+    .trust{background:#f8fafc;padding:20px 0}
     .trustgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:900px;margin:0 auto}
-    .trustcard{background:#fff;border:1px solid var(--ring);border-radius:14px;padding:16px;text-align:center}
-    .big{font-size:22px;font-weight:900}
+    .trustcard{background:#fff;border:1px solid var(--ring);border-radius:14px;padding:12px;text-align:center}
+    .big{font-size:20px;font-weight:900}
 
-    /* Process */
-    .section-title{font-size:28px;font-weight:900;text-align:center;margin:28px 0 12px}
-    .process{padding:12px 0 20px}
-    .steps{display:grid;gap:16px;max-width:1000px;margin:0 auto}
-    .step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--ring);border-radius:16px;padding:16px;box-shadow:0 10px 26px var(--shadow1)}
-    .step .num{width:44px;height:44px;border-radius:50%;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
-    .step h3{font-size:20px;margin-bottom:4px}
-    .step .sub{color:#111;font-size:18px;margin:2px 0 0}
+    .section-title{font-size:24px;font-weight:900;text-align:center;margin:24px 0 12px}
 
-    /* HOW panels + roadmap */
-    .how-panel{background:#fff;border:1px solid var(--ring);border-radius:18px;padding:18px;box-shadow:0 8px 22px var(--shadow1)}
-    .how-panel h5{font-size:20px;font-weight:900;margin-bottom:6px}
+    /* Steps & panels */
+    .process{padding:8px 0 18px}
+    .steps{display:grid;gap:14px;max-width:1000px;margin:0 auto}
+    .step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--ring);border-radius:16px;padding:14px;box-shadow:0 10px 26px var(--shadow1)}
+    .step .num{width:40px;height:40px;border-radius:50%;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
+    .step h3{font-size:18px;margin-bottom:2px}
+    .step .sub{color:#111;font-size:16px;margin:2px 0 0}
+
+    .how-panel{background:#fff;border:1px solid var(--ring);border-radius:18px;padding:16px;box-shadow:0 8px 22px var(--shadow1)}
+    .how-panel h5{font-size:18px;font-weight:900;margin-bottom:6px}
     .muted{color:#475569;font-size:14px;margin-bottom:8px}
     .bullets{margin-left:18px}
     .bullets li{margin:6px 0;color:#111827}
     .subb{margin:6px 0 0 20px;list-style:circle}
     .receive{margin-top:10px}
     .receive li{margin:6px 0}
-    .roadmap{margin-top:10px;background:#fafafa;border:1px dashed #cbd5e1;border-radius:14px;padding:14px}
-    .roadmap h6{font-size:16px;font-weight:900;margin-bottom:6px}
+    .roadmap{margin-top:10px;background:#fafafa;border:1px dashed #cbd5e1;border-radius:14px;padding:12px}
+    .roadmap h6{font-size:15px;font-weight:900;margin-bottom:6px}
 
     /* Accordion */
     .accordion{border:1px solid var(--ring);border-radius:14px;overflow:hidden;margin-top:10px;background:#fff}
@@ -83,65 +83,76 @@
     .accordion.open .toggle{transform:rotate(180deg)}
     .toggle{transition:.2s}
 
-    /* WhatsApp rail */
-    .wa-rail{background:#fff;padding:28px 0}
-    .rail{display:flex;gap:18px;overflow-x:auto;padding:8px 2px 12px;scroll-snap-type:x mandatory}
-    .rail::-webkit-scrollbar{display:none}
-    .shot{width:clamp(260px,70vw,360px);background:#eafff3;border:1px solid #c7f0db;border-radius:18px;padding:12px;scroll-snap-align:start;box-shadow:0 10px 28px rgba(0,0,0,.08)}
-    .shot .img{aspect-ratio:4/3;background:#f3f4f6;border-radius:12px}
+    /* ======= Carousels (WhatsApp rail + Reviews) ======= */
+    .carousel-wrapper{
+      position:relative;
+      --fadeW: 36px;
+      --padX: 12px;
+    }
+    .carousel-wrapper::before,
+    .carousel-wrapper::after{
+      content:"";
+      position:absolute;top:0;bottom:0;width:var(--fadeW);pointer-events:none;z-index:2;
+    }
+    .carousel-wrapper::before{
+      left:0;background:linear-gradient(90deg,#fff,rgba(255,255,255,0));
+    }
+    .carousel-wrapper::after{
+      right:0;background:linear-gradient(270deg,#fff,rgba(255,255,255,0));
+    }
+    .carousel{
+      display:flex;gap:16px;overflow-x:auto;padding:6px var(--padX) 14px;
+      scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;
+    }
+    .carousel::-webkit-scrollbar{height:0}
+    .card-xl{
+      scroll-snap-align:start;
+      min-width:clamp(280px,76vw,420px);
+      background:#fff;border:1px solid var(--ring);border-radius:18px;padding:14px;
+      box-shadow:0 12px 28px rgba(0,0,0,.08);
+    }
+    .shot{background:#eafff3;border:1px solid #c7f0db}
+    .shot .img{
+      width:100%;aspect-ratio:4/3;background:#f1f5f9;border-radius:12px;
+    }
+    .shot .title{
+      margin-top:10px;font-weight:900;font-size:18px;line-height:1.35;color:#256b3e;
+    }
 
-    /* Founder — image-2/3 style */
-    .founder{background:#0b0b0b;color:#fff;padding:56px 0}
+    /* Reviews/Toppers carousel (bigger) */
+    .review-card{
+      position:relative;
+      padding-top:16px;
+    }
+    .badge{
+      position:absolute;top:-10px;right:14px;background:#000;color:#fff;
+      padding:6px 12px;border-radius:12px;font-size:12px;font-weight:800
+    }
+    .review-name{font-weight:900;font-size:18px;margin:0 0 6px}
+    .review-note{color:#374151;font-size:15px}
+
+    /* Founder */
+    .founder{background:#0b0b0b;color:#fff;padding:44px 0}
     .f-card{
-      background:#0f1115;
-      border:1px solid #1f2937;
-      border-radius:24px;
-      padding:28px;
-      display:grid;
-      grid-template-columns:140px 1fr;
-      gap:24px;
-      box-shadow:0 24px 60px rgba(0,0,0,.45);
-      max-width:1100px;
-      margin:0 auto;
+      background:#0f1115;border:1px solid #1f2937;border-radius:24px;padding:24px;
+      display:grid;grid-template-columns:120px 1fr;gap:18px;box-shadow:0 24px 60px rgba(0,0,0,.45);
+      max-width:1100px;margin:0 auto;
     }
-    .f-avatar{
-      width:140px;height:140px;border-radius:999px;object-fit:cover;
-      border:2px solid #334155;box-shadow:0 12px 34px rgba(0,0,0,.5);display:block;
-    }
-    .f-title{font-size:34px;line-height:1.2;font-weight:900;color:#fff}
-    .f-title-strong{display:block;font-size:36px}
+    .f-avatar{width:120px;height:120px;border-radius:999px;object-fit:cover;border:2px solid #334155;box-shadow:0 12px 34px rgba(0,0,0,.5);display:block}
+    .f-title{font-size:28px;line-height:1.2;font-weight:900;color:#fff}
+    .f-title-strong{display:block;font-size:32px}
     .f-sub{color:#9ca3af;font-style:italic;margin:6px 0 12px}
     .f-body p{color:#e5e7eb;margin:8px 0}
-    .f-points{list-style:none;margin:14px 0 0;padding:0}
+    .f-points{list-style:none;margin:12px 0 0;padding:0}
     .f-points li{display:flex;align-items:flex-start;gap:10px;color:#e5e7eb;margin:8px 0}
     .f-points .icon{width:22px;text-align:center;flex:0 0 22px}
-    /* keep bullets readable inside founder */
     .founder .bullets li{color:#e5e7eb}
 
-    /* Tablet and up: slightly bigger circle */
-    @media (min-width:768px){
-      .f-card{grid-template-columns:220px 1fr;gap:28px}
-      .f-avatar{width:220px;height:220px;border-width:3px}
-      .f-title{font-size:40px}
-      .f-title-strong{font-size:44px}
-    }
-    /* Wide screens */
-    @media (min-width:1100px){
-      .f-card{grid-template-columns:240px 1fr}
-      .f-avatar{width:240px;height:240px}
-    }
-
-    /* Success strip */
-    .success{padding:28px 0}
-    .s-grid{display:flex;gap:16px;overflow-x:auto;padding:8px 0 14px}
-    .s-card{min-width:260px;max-width:300px;background:#fff;border:1px solid var(--ring);border-radius:16px;padding:14px;box-shadow:0 6px 18px var(--shadow1);position:relative}
-    .s-rank{position:absolute;top:-10px;right:14px;background:#000;color:#fff;padding:6px 12px;border-radius:12px;font-size:12px;font-weight:800}
-
     /* Comparison */
-    .compare{background:#f8fafc;padding:32px 0}
-    .c-wrap{max-width:1000px;margin:0 auto;display:grid;gap:18px}
+    .compare{background:#f8fafc;padding:28px 0}
+    .c-wrap{max-width:1000px;margin:0 auto;display:grid;gap:16px}
     .tbl{background:#fff;border:1px solid var(--ring);border-radius:14px;overflow:hidden;box-shadow:0 8px 24px var(--shadow1)}
-    .th{padding:14px 16px;color:#fff;font-weight:900}
+    .th{padding:12px 14px;color:#fff;font-weight:900}
     .th-a{background:linear-gradient(135deg,#6b7280,#4b5563)}
     .th-b{background:linear-gradient(135deg,#000,#1a1a1a)}
     table{width:100%;border-collapse:collapse}
@@ -150,8 +161,8 @@
 
     /* Footer */
     .footer{background:#000;color:#fff;margin-top:30px}
-    .foot-top{padding:28px 0}
-    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:20px}
+    .foot-top{padding:24px 0}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:18px}
     .foot-title{font-weight:800;margin-bottom:8px}
     .foot-links{list-style:none}
     .foot-links li{margin:6px 0}
@@ -160,17 +171,28 @@
     .addr{line-height:1.7;color:#cbd5e1}
     .bar{border-top:1px solid rgba(255,255,255,.15);text-align:center;padding:12px 0;font-size:13px}
 
-    /* Responsive */
+    /* ======= Responsive ======= */
     @media (max-width:420px){
       .stats{grid-template-columns:1fr}
-      .hero h1{font-size:24px}
-      .foot-grid{grid-template-columns:1fr;gap:16px}
+      .hero h1{font-size:22px}
+      .logo{font-size:17px}
+      .section-title{font-size:22px}
+      .foot-grid{grid-template-columns:1fr;gap:14px}
+      .f-card{grid-template-columns:1fr;gap:14px;text-align:center}
+      .f-avatar{margin:0 auto}
     }
     @media (min-width:768px){
       .hamb{display:none}.nav-actions{display:flex;gap:12px}
       .hero h1{font-size:44px}
       .stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
       .section-title{font-size:36px}
+      .f-card{grid-template-columns:220px 1fr;gap:28px}
+      .f-avatar{width:220px;height:220px;border-width:3px}
+      .f-title{font-size:40px}.f-title-strong{font-size:44px}
+      /* Carousels wider on desktop */
+      .card-xl{min-width:420px}
+      .carousel-wrapper::before{background:linear-gradient(90deg,#f8fafc,rgba(248,250,252,0))}
+      .carousel-wrapper::after{background:linear-gradient(270deg,#f8fafc,rgba(248,250,252,0))}
     }
   </style>
 </head>
@@ -289,7 +311,6 @@
         <!-- STEP 2: main copy -->
         <div class="how-panel" id="roadmap-details" aria-labelledby="roadmap-step">
           <h5>Get Your Child’s Personalised IIT Success Roadmap</h5>
-
           <p style="margin:8px 0">Imagine this. Your child has just stepped into <b>Grade 12</b>. Grade 11 is behind them — but deep down, you know something’s not right.</p>
           <p>Those <b>big coaching centres</b>… Packed classrooms, <b>fast-paced teaching</b>, endless assignments. Even after <b>revision sessions</b>, your child still feels <b>lost</b> in many topics.</p>
           <p>Now, there are only <b>6 months left</b> for JEE Mains. Your child wants to give their <b>100%</b> — but where should they start?</p>
@@ -328,108 +349,107 @@
           <div class="num">3</div>
           <div>
             <h3>Mentorship Sessions</h3>
-            <!-- replaced the old subtitle with the full detailed content panel below -->
           </div>
         </article>
 
-        <!-- NEW: Step 3 detailed content (from images 2/3/4/5) -->
         <div class="how-panel" id="mentorship-details">
           <h5>100% Personalised 1-on-1 Mentorship — No Batches. No Distractions. ✅</h5>
-
           <p style="margin:8px 0"><i>"In most coaching centres, your child sits in a <b>batch of 200–300 students</b>. The pace is fixed, doubts pile up, and progress slows down."</i></p>
-
-          <p>At iiTuitions, we do things <b>different</b>ly. Every single session is <b>1-on-1</b> — just your child and an IIT/NIT mentor.</p>
-
+          <p>At iiTuitions, every single session is <b>1-on-1</b> — just your child and an IIT/NIT mentor.</p>
           <ul class="bullets" style="margin-top:8px">
             <li>🎓 <b>IIT/NIT Mentors Only</b> → No junior faculty. No compromises.</li>
-            <li>🟢 <b>Daily WhatsApp Updates</b> → After every class, we share:
-              <ul class="subb">
-                <li>Topics covered</li>
-                <li>Tests completed</li>
-                <li>Progress reports</li>
-              </ul>
-            </li>
-            <li>💬 <b>Unlimited Doubt Support</b> → Students can ping their WhatsApp group <b>anytime</b>.</li>
-            <li>🔁 <b>Faculty Replacement Guarantee</b> → If your child isn’t comfortable, we <b>instantly assign a new mentor</b>.</li>
-            <li>👀 <b>Live Session Monitoring</b> →
-              <ul class="subb">
-                <li><b>Both mentor and student cameras stay ON</b>.</li>
-                <li>Every minute is tracked to ensure <b>zero time wastage</b>.</li>
-              </ul>
-            </li>
-            <li>📈 <b>Maximum Attention = Maximum Results</b></li>
+            <li>🟢 <b>Daily WhatsApp Updates</b> → Topics covered, tests done, progress.</li>
+            <li>💬 <b>Unlimited Doubt Support</b> → WhatsApp group access anytime.</li>
+            <li>🔁 <b>Faculty Replacement Guarantee</b> → Switch instantly if needed.</li>
+            <li>👀 <b>Live Session Monitoring</b> → Both cameras ON; zero time waste.</li>
           </ul>
-
-          <p style="margin-top:10px"><b>Your Child, Their Mentor, One Goal — Crack JEE.</b><br>
-          <b>Where every session revolves around your child.</b></p>
+          <p style="margin-top:10px"><b>Your Child, Their Mentor, One Goal — Crack JEE.</b></p>
         </div>
-        <!-- /NEW Step 3 details -->
 
         <!-- Step 4 -->
         <article class="step">
           <div class="num">4</div>
           <div>
             <h3>Reviews &amp; Results</h3>
-            <div class="sub">Track Progress Every day</div>
+            <div class="sub">Track progress every day</div>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- WhatsApp rail -->
-  <section class="wa-rail">
+  <!-- ===== WhatsApp rail (side-scroll, big) ===== -->
+  <section class="wa-rail" style="background:#fff;padding:24px 0">
     <div class="container">
       <h2 class="section-title">What Parents Text Us</h2>
-      <div class="rail">
-        <div class="shot">
-          <div class="img"></div>
-          <div style="margin-top:8px;font-weight:700;color:#256b3e">Physics 48% → 90% in 8 weeks</div>
-        </div>
-        <div class="shot">
-          <div class="img"></div>
-          <div style="margin-top:8px;font-weight:700;color:#256b3e">Weekly parent review calls</div>
-        </div>
-        <div class="shot">
-          <div class="img"></div>
-          <div style="margin-top:8px;font-weight:700;color:#256b3e">Weekly parent review calls</div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel" aria-label="Parent WhatsApp messages">
+          <div class="card-xl shot">
+            <div class="img"></div>
+            <div class="title">Physics 48% → 90% in 8 weeks</div>
+          </div>
+
+          <div class="card-xl shot">
+            <div class="img"></div>
+            <div class="title">Weekly parent review calls</div>
+          </div>
+
+          <div class="card-xl shot">
+            <div class="img"></div>
+            <div class="title">“Thanks for daily updates, he’s finally consistent”</div>
+          </div>
+
+          <div class="card-xl shot">
+            <div class="img"></div>
+            <div class="title">Chemistry accuracy up by 35% in 1 month</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Short success strip -->
-  <section class="success" id="success">
+  <!-- ===== Reviews / Toppers (side-scroll, big) ===== -->
+  <section class="success" id="success" style="padding:24px 0">
     <div class="container">
       <h2 class="section-title">JEE Advanced Toppers</h2>
-      <div class="s-grid">
-        <div class="s-card">
-          <div class="s-rank">AIR 23</div>
-          <div style="font-weight:800;margin-bottom:6px">Sri Charan Reddy</div>
-          <div style="color:#374151">Physics 45% → 96% with targeted mentoring.</div>
-        </div>
-        <div class="s-card">
-          <div class="s-rank">AIR 55</div>
-          <div style="font-weight:800;margin-bottom:6px">Yashwitha</div>
-          <div style="color:#374151">Daily reviews → IIT Delhi admit.</div>
-        </div>
-        <div class="s-card">
-          <div class="s-rank">AIR 45</div>
-          <div style="font-weight:800;margin-bottom:6px">Arjun Sharma</div>
-          <div style="color:#374151">Maths 52% → 94% via sprint drills + feedback.</div>
+
+      <div class="carousel-wrapper" style="background:#f8fafc;border-radius:16px;padding:8px 0">
+        <div class="carousel" aria-label="Topper stories">
+          <div class="card-xl review-card">
+            <div class="badge">AIR 23</div>
+            <div class="review-name">Sri Charan Reddy</div>
+            <div class="review-note">Physics 45% → 96% with targeted mentoring.</div>
+          </div>
+
+          <div class="card-xl review-card">
+            <div class="badge">AIR 55</div>
+            <div class="review-name">Yashwitha</div>
+            <div class="review-note">Daily reviews → IIT Delhi admit.</div>
+          </div>
+
+          <div class="card-xl review-card">
+            <div class="badge">AIR 45</div>
+            <div class="review-name">Arjun Sharma</div>
+            <div class="review-note">Maths 52% → 94% via sprint drills + feedback.</div>
+          </div>
+
+          <div class="card-xl review-card">
+            <div class="badge">AIR 71</div>
+            <div class="review-name">Tanishka</div>
+            <div class="review-note">From inconsistent to disciplined in 6 weeks.</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Founder (new card replacing the old slab) -->
+  <!-- Founder -->
   <section class="founder" id="founder">
     <div class="container">
       <div class="f-card">
         <div class="f-left">
-          <img class="f-avatar"
-               src="https://via.placeholder.com/240x240.png?text=Prudhvi"
-               alt="Prudhvi — Founder of iiTuitions" />
+          <img class="f-avatar" src="https://via.placeholder.com/240x240.png?text=Prudhvi" alt="Prudhvi — Founder of iiTuitions" />
         </div>
 
         <div class="f-right">
@@ -437,13 +457,7 @@
           <div class="f-sub">(Former Physics HOD Hyderabad)</div>
 
           <div class="f-body">
-            <p>
-              I worked as a <b>Physics HOD</b> in a large coaching centre. Every day I watched a class of
-              <b>80</b> race through the syllabus; <b>7–8</b> kept pace, many more slipped behind. Not because they were weak—
-              but because the <b>batch was too big</b> and the <b>curriculum too fast</b>. Even when teachers wanted to help,
-              there wasn’t time.
-            </p>
-            <p>In <b>2017</b>, I decided to build the opposite of that system.</p>
+            <p>I worked as a <b>Physics HOD</b> in a large coaching centre. Classes of <b>80+</b> raced through the syllabus; many slipped behind because <b>batches were too big</b>. In <b>2017</b>, I decided to build the opposite.</p>
           </div>
 
           <ul class="f-points">
@@ -452,11 +466,8 @@
             <li><span class="icon">📞</span><b>Weekly parent reviews</b> • instant strategy corrections</li>
           </ul>
 
-          <p style="margin:18px 0 6px">
-            At <b>iiTuitions</b>, we teach <b>one child at a time</b>. We keep the intake to
-            <b>only 50 students a year</b> so every child gets a plan, a mentor, and attention that’s impossible in big batches.
-            We focus on <b>interest first</b>, learning next, and ranks as the outcome. With this approach, we’ve helped
-            <b>hundreds of students</b> crack the JEE—without burning them out.
+          <p style="margin:16px 0 6px">
+            At <b>iiTuitions</b>, we teach <b>one child at a time</b>. With limited intake, every child gets a plan, a mentor, and attention that’s impossible in big batches.
           </p>
 
           <h3 style="font-size:20px;font-weight:900;margin:16px 0 8px">What I stand for</h3>
@@ -467,9 +478,7 @@
             <li>If a mentor’s style doesn’t fit your child, <b>we switch—no ego</b></li>
           </ul>
 
-          <p style="margin-top:14px;font-style:italic;opacity:.95">
-            “Even if it’s one student, give 100% and teach them how to learn. Motivation first. Mastery next.”
-          </p>
+          <p style="margin-top:14px;font-style:italic;opacity:.95">“Even if it’s one student, give 100% and teach them how to learn. Motivation first. Mastery next.”</p>
           <p style="margin-top:6px;opacity:.9">— <b>Prudhvi</b>, Founder, iiTuitions</p>
         </div>
       </div>
@@ -558,11 +567,10 @@
         }
       });
     }
-    // Accordions (if any elsewhere)
+    // Accordions
     document.querySelectorAll('.accordion .acc-h').forEach(h=>{
       h.addEventListener('click',()=> h.parentElement.classList.toggle('open'));
     });
-
     // Year
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
