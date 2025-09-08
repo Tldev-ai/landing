@@ -636,6 +636,96 @@
     </div>
   </section>
 
+
+<!-- ===== Mentors (3-card side scroll) ===== -->
+<section id="mentors" style="background:#fff;padding:24px 0">
+  <style>
+    /* Mentors rail */
+    #mentors .wrap{max-width:1100px;margin:0 auto;padding:0 12px}
+    #mentors h2{font-weight:900;text-align:center;margin-bottom:12px}
+    .mentor-rail{position:relative}
+    .mentor-list{
+      display:flex;gap:16px;overflow-x:auto;padding:6px 2px 14px;
+      scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch
+    }
+    .mentor-list::-webkit-scrollbar{display:none}
+    .m-card{
+      scroll-snap-align:start;
+      min-width:clamp(260px,78vw,340px);
+      background:#fff;border:1px solid var(--ring);border-radius:16px;padding:14px;
+      box-shadow:0 10px 26px var(--shadow1)
+    }
+    .m-head{display:flex;align-items:center;gap:12px}
+    /* circle avatar like your screenshot */
+    .m-ava{
+      width:72px;height:72px;border-radius:999px;object-fit:cover;
+      background:#eef2f7;border:3px solid #e5e7eb;box-shadow:0 8px 22px rgba(0,0,0,.08)
+    }
+    .m-name{font-weight:900;font-size:18px;line-height:1.2;color:#0b1220}
+    .m-meta{font-weight:700;font-size:13px;color:#475569}
+    .m-line{margin-top:10px;color:#111827}
+    .m-cta{display:flex;justify-content:center;margin-top:8px}
+  </style>
+
+  <div class="wrap">
+    <h2 class="section-title">Your Child’s Mentors</h2>
+
+    <div class="mentor-rail">
+      <div class="mentor-list" aria-label="Mentor cards">
+
+        <!-- Keshav -->
+        <article class="m-card">
+          <div class="m-head">
+            <!-- replace src with your image -->
+            <img class="m-ava" src="" alt="Keshav — IIT Bombay, Maths">
+            <div>
+              <div class="m-name">Keshav</div>
+              <div class="m-meta">IIT Bombay • Maths</div>
+            </div>
+          </div>
+          <p class="m-line">“Turns weak Algebra into score makers.”</p>
+        </article>
+
+        <!-- Jyothi -->
+        <article class="m-card">
+          <div class="m-head">
+            <img class="m-ava" src="" alt="Jyothi — IIT Delhi, Physics">
+            <div>
+              <div class="m-name">Jyothi</div>
+              <div class="m-meta">IIT Delhi • Physics</div>
+            </div>
+          </div>
+          <p class="m-line">“Concept → application in every session.”</p>
+        </article>
+
+        <!-- Pooja -->
+        <article class="m-card">
+          <div class="m-head">
+            <img class="m-ava" src="" alt="Pooja — NIT Warangal, Chemistry">
+            <div>
+              <div class="m-name">Pooja</div>
+              <div class="m-meta">NIT Warangal • Chemistry</div>
+            </div>
+          </div>
+          <p class="m-line">“Organic made simple with daily drills.”</p>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="m-cta">
+      <a class="btn btn-wa" href="https://wa.me/919010031000?text=Hi%20IITuitions%2C%20please%20match%20a%20mentor%20to%20my%20child" target="_blank" rel="noopener">
+        💬 Match a Mentor to My Child
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+  
+
   <!-- GOOGLE REVIEWS -->
   <style>
     #reviews{background:#f8fafc;padding:40px 0}
