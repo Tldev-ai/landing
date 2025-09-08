@@ -148,6 +148,33 @@
     .f-points .icon{width:22px;text-align:center;flex:0 0 22px}
     .founder .bullets li{color:#e5e7eb}
 
+    /* Comparison layout: 2 cols on desktop, stacked on mobile */
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+.card{
+  background:#fff;
+  border:1px solid #f1f5f9;
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 8px 28px rgba(0,0,0,.06);
+}
+.card-red h3{ color:#ef4444; }
+.card-green h3{ color:#10b981; }
+
+/* Mobile: stack one after another */
+@media (max-width:768px){
+  .why-grid{
+    grid-template-columns:1fr;   /* single column */
+  }
+  .card{ padding:18px; }
+  .why-grid .card + .card{ margin-top:12px; }
+}
+
+
     /* Comparison */
     .compare{background:#f8fafc;padding:28px 0}
     .c-wrap{max-width:1000px;margin:0 auto;display:grid;gap:16px}
@@ -520,7 +547,8 @@
       Why 80% of Students Struggle in Big Batches — And How <span style="color:#25D366">iiTuitions</span> Fixes It
     </h2>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start">
+    <div class="why-grid">
+
       
       <!-- Left Column: Problems -->
       <div style="background:#fff;border:1px solid #f1f5f9;border-radius:18px;padding:22px;box-shadow:0 8px 24px rgba(0,0,0,.06)">
