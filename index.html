@@ -90,13 +90,46 @@
     .shot{width:clamp(260px,70vw,360px);background:#eafff3;border:1px solid #c7f0db;border-radius:18px;padding:12px;scroll-snap-align:start;box-shadow:0 10px 28px rgba(0,0,0,.08)}
     .shot .img{aspect-ratio:4/3;background:#f3f4f6;border-radius:12px}
 
-    /* Founder */
-    .founder{background:#0b0b0b;color:#fff;padding:48px 0}
-    .founder-grid{max-width:1100px;margin:0 auto;display:grid;gap:28px}
-    .f-photo{border-radius:22px;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.45);justify-self:center;width:min(520px,92vw);height:auto;background:#111}
-    .f-copy h2{font-size:30px;font-weight:900;margin-bottom:10px}
-    .f-quote{background:#111827;border-left:4px solid #93c5fd;padding:16px;border-radius:14px;color:#dbeafe;font-style:italic;margin:12px 0 14px}
-    .f-meta{color:#cbd5e1}
+    /* Founder — image-2/3 style */
+    .founder{background:#0b0b0b;color:#fff;padding:56px 0}
+    .f-card{
+      background:#0f1115;
+      border:1px solid #1f2937;
+      border-radius:24px;
+      padding:28px;
+      display:grid;
+      grid-template-columns:140px 1fr;
+      gap:24px;
+      box-shadow:0 24px 60px rgba(0,0,0,.45);
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .f-avatar{
+      width:140px;height:140px;border-radius:999px;object-fit:cover;
+      border:2px solid #334155;box-shadow:0 12px 34px rgba(0,0,0,.5);display:block;
+    }
+    .f-title{font-size:34px;line-height:1.2;font-weight:900;color:#fff}
+    .f-title-strong{display:block;font-size:36px}
+    .f-sub{color:#9ca3af;font-style:italic;margin:6px 0 12px}
+    .f-body p{color:#e5e7eb;margin:8px 0}
+    .f-points{list-style:none;margin:14px 0 0;padding:0}
+    .f-points li{display:flex;align-items:flex-start;gap:10px;color:#e5e7eb;margin:8px 0}
+    .f-points .icon{width:22px;text-align:center;flex:0 0 22px}
+    /* keep bullets readable inside founder */
+    .founder .bullets li{color:#e5e7eb}
+
+    /* Tablet and up: slightly bigger circle */
+    @media (min-width:768px){
+      .f-card{grid-template-columns:220px 1fr;gap:28px}
+      .f-avatar{width:220px;height:220px;border-width:3px}
+      .f-title{font-size:40px}
+      .f-title-strong{font-size:44px}
+    }
+    /* Wide screens */
+    @media (min-width:1100px){
+      .f-card{grid-template-columns:240px 1fr}
+      .f-avatar{width:240px;height:240px}
+    }
 
     /* Success strip */
     .success{padding:28px 0}
@@ -138,7 +171,6 @@
       .hero h1{font-size:44px}
       .stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
       .section-title{font-size:36px}
-      .founder-grid{grid-template-columns:480px 1fr;gap:40px}
     }
   </style>
 </head>
@@ -366,9 +398,7 @@
     </div>
   </section>
 
-
-
-   <!-- Short success strip -->
+  <!-- Short success strip -->
   <section class="success" id="success">
     <div class="container">
       <h2 class="section-title">JEE Advanced Toppers</h2>
@@ -392,23 +422,59 @@
     </div>
   </section>
 
-  
-
-  <!-- Founder slab -->
+  <!-- Founder (new card replacing the old slab) -->
   <section class="founder" id="founder">
-    <div class="founder-grid">
-      <div class="f-photo">
-        <img src="https://via.placeholder.com/900x900/0b0b0b/ffffff?text=Founder+Photo" alt="Prudhvi Sir — Founder of IITuitions" style="width:100%;height:auto;display:block">
-      </div>
-      <div class="f-copy">
-        <h2>Founded by Prudhvi Sir</h2>
-        <div class="f-quote">“Just as Arjuna achieved greatness through focused concentration and dedication, our students align mind, intellect, and action toward IIT dreams.”</div>
-        <p class="f-meta">NIT Warangal graduate. Since 2017 we’ve stayed true to <b>individual attention</b>, <b>recorded sessions</b>, and <b>weekly parent reviews</b>.</p>
+    <div class="container">
+      <div class="f-card">
+        <div class="f-left">
+          <img class="f-avatar"
+               src="https://via.placeholder.com/240x240.png?text=Prudhvi"
+               alt="Prudhvi — Founder of iiTuitions" />
+        </div>
+
+        <div class="f-right">
+          <h2 class="f-title">Founded by Prudhvi — <span class="f-title-strong">NIT Warangal</span></h2>
+          <div class="f-sub">(Former Physics HOD Hyderabad)</div>
+
+          <div class="f-body">
+            <p>
+              I worked as a <b>Physics HOD</b> in a large coaching centre. Every day I watched a class of
+              <b>80</b> race through the syllabus; <b>7–8</b> kept pace, many more slipped behind. Not because they were weak—
+              but because the <b>batch was too big</b> and the <b>curriculum too fast</b>. Even when teachers wanted to help,
+              there wasn’t time.
+            </p>
+            <p>In <b>2017</b>, I decided to build the opposite of that system.</p>
+          </div>
+
+          <ul class="f-points">
+            <li><span class="icon">🎓</span><b>100% 1-on-1 classes</b> with IIT/NIT mentors</li>
+            <li><span class="icon">🎯</span><b>Only 50 students/year</b> = quality over quantity</li>
+            <li><span class="icon">📞</span><b>Weekly parent reviews</b> • instant strategy corrections</li>
+          </ul>
+
+          <p style="margin:18px 0 6px">
+            At <b>iiTuitions</b>, we teach <b>one child at a time</b>. We keep the intake to
+            <b>only 50 students a year</b> so every child gets a plan, a mentor, and attention that’s impossible in big batches.
+            We focus on <b>interest first</b>, learning next, and ranks as the outcome. With this approach, we’ve helped
+            <b>hundreds of students</b> crack the JEE—without burning them out.
+          </p>
+
+          <h3 style="font-size:20px;font-weight:900;margin:16px 0 8px">What I stand for</h3>
+          <ul class="bullets" style="margin-left:18px">
+            <li><b>Quality over quantity</b> — always</li>
+            <li><b>1-on-1 mentorship</b> by sharp, caring IIT/NIT faculty</li>
+            <li><b>Weekly parent reviews</b> and <b>course-corrections now</b>, not after results</li>
+            <li>If a mentor’s style doesn’t fit your child, <b>we switch—no ego</b></li>
+          </ul>
+
+          <p style="margin-top:14px;font-style:italic;opacity:.95">
+            “Even if it’s one student, give 100% and teach them how to learn. Motivation first. Mastery next.”
+          </p>
+          <p style="margin-top:6px;opacity:.9">— <b>Prudhvi</b>, Founder, iiTuitions</p>
+        </div>
       </div>
     </div>
   </section>
-
- 
 
   <!-- Comparison -->
   <section class="compare" id="why">
