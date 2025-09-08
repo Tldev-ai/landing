@@ -629,90 +629,99 @@
   
 
 
-<!-- ========== GOOGLE REVIEWS (3 screenshots + cards) ========== -->
-<section id="reviews" style="padding:28px 0;background:#f8fafc">
+
+
+
+
+
+  <section id="reviews" style="padding:36px 0;background:#f8fafc">
   <div class="container">
-    <h2 class="section-title" style="margin-bottom:12px">Parents Love iiTuitions</h2>
+    <!-- Better Title -->
+    <h2 class="section-title" style="margin-bottom:10px;text-align:center">
+      4.9★ Rated by 200+ Parents — <span style="color:#10b981">See Their Real Stories</span>
+    </h2>
 
-    <!-- Ratings strip -->
+    <!-- Ratings Strip -->
     <div class="ratings-strip">
-      <span class="stars">⭐️⭐️⭐️⭐️⭐️</span>
-      <span>4.9/5</span>
-      <small>• 200+ Google reviews</small>
+      <span class="stars" style="font-size:20px;color:#facc15">⭐️⭐️⭐️⭐️⭐️</span>
+      <span style="font-weight:700;font-size:18px">4.9/5</span>
+      <small style="color:#475569;font-weight:600"> • 200+ Google Reviews</small>
     </div>
 
-    <!-- Screenshot strip (exactly 3) -->
-    <div class="shots3" style="
-      display:grid;grid-template-columns:1fr;gap:10px;max-width:900px;margin:0 auto 14px;
-    ">
+    <!-- 3 Real Google Review Screenshots -->
+    <div class="shots3" style="display:grid;gap:10px;max-width:900px;margin:0 auto 20px">
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
-        <!-- TODO: replace these three src URLs with your real Google review screenshot images -->
-        <img src="https://via.placeholder.com/900x600?text=Review+Screenshot+1" alt="Google review screenshot 1" style="width:100%;border-radius:12px;background:#f3f4f6">
-        <img src="https://via.placeholder.com/900x600?text=Review+Screenshot+2" alt="Google review screenshot 2" style="width:100%;border-radius:12px;background:#f3f4f6">
-        <img src="https://via.placeholder.com/900x600?text=Review+Screenshot+3" alt="Google review screenshot 3" style="width:100%;border-radius:12px;background:#f3f4f6">
+        <img src="review1.png" alt="Google Review 1" style="width:100%;border-radius:12px">
+        <img src="review2.png" alt="Google Review 2" style="width:100%;border-radius:12px">
+        <img src="review3.png" alt="Google Review 3" style="width:100%;border-radius:12px">
       </div>
     </div>
 
-    <!-- Reviews rail (side-scroll on mobile) -->
-    <div class="reviews-rail">
-      <div class="reviews" aria-label="Google reviews">
-        <!-- Review 1 -->
-        <article class="rev-card">
-          <div class="rev-head">
-            <!-- Replace with real profile photo -->
-            <img class="rev-avatar" src="https://via.placeholder.com/88" alt="Reviewer avatar">
-            <div>
-              <div class="rev-name">Srinivas Reddy</div>
-              <div class="rev-meta">Verified Parent • May 2025</div>
-            </div>
+    <!-- Reviews Carousel -->
+    <div class="reviews">
+      <!-- Review Card 1 -->
+      <article class="rev-card">
+        <div class="rev-head">
+          <img class="rev-avatar" src="parent1.jpg" alt="Parent photo">
+          <div>
+            <div class="rev-name">Srinivas Reddy <span style="color:#10b981">✔ Verified Parent</span></div>
+            <div class="rev-meta">May 2025</div>
           </div>
-          <div class="rev-stars">⭐️⭐️⭐️⭐️⭐️</div>
-          <p class="rev-body" style="margin-top:6px">
-            Physics went from <b>48% to 90%</b> in 8 weeks. Daily updates kept us involved and confident.
-          </p>
-        </article>
+        </div>
+        <div class="rev-stars" style="color:#facc15;font-size:16px">⭐️⭐️⭐️⭐️⭐️</div>
+        <p class="rev-body" style="margin-top:6px">
+          Physics went from <b>48% → 90%</b> in just 8 weeks.  
+          The <b>daily WhatsApp updates</b> kept us informed and confident.
+        </p>
+      </article>
 
-        <!-- Review 2 -->
-        <article class="rev-card">
-          <div class="rev-head">
-            <img class="rev-avatar" src="https://via.placeholder.com/88" alt="Reviewer avatar">
-            <div>
-              <div class="rev-name">Meena Sharma</div>
-              <div class="rev-meta">Verified Parent • Apr 2025</div>
-            </div>
+      <!-- Review Card 2 -->
+      <article class="rev-card">
+        <div class="rev-head">
+          <img class="rev-avatar" src="parent2.jpg" alt="Parent photo">
+          <div>
+            <div class="rev-name">Meena Sharma <span style="color:#10b981">✔ Verified Parent</span></div>
+            <div class="rev-meta">Apr 2025</div>
           </div>
-          <div class="rev-stars">⭐️⭐️⭐️⭐️⭐️</div>
-          <p class="rev-body" style="margin-top:6px">
-            True <b>1-on-1 mentorship</b>. Weekly review calls + recorded classes were game changers.
-          </p>
-        </article>
+        </div>
+        <div class="rev-stars" style="color:#facc15;font-size:16px">⭐️⭐️⭐️⭐️⭐️</div>
+        <p class="rev-body" style="margin-top:6px">
+          True <b>1-on-1 mentorship</b>.  
+          Weekly review calls + recorded sessions were game changers.
+        </p>
+      </article>
 
-        <!-- Review 3 -->
-        <article class="rev-card">
-          <div class="rev-head">
-            <img class="rev-avatar" src="https://via.placeholder.com/88" alt="Reviewer avatar">
-            <div>
-              <div class="rev-name">Arun Kumar</div>
-              <div class="rev-meta">Verified Parent • Feb 2025</div>
-            </div>
+      <!-- Review Card 3 -->
+      <article class="rev-card">
+        <div class="rev-head">
+          <img class="rev-avatar" src="parent3.jpg" alt="Parent photo">
+          <div>
+            <div class="rev-name">Arun Kumar <span style="color:#10b981">✔ Verified Parent</span></div>
+            <div class="rev-meta">Feb 2025</div>
           </div>
-          <div class="rev-stars">⭐️⭐️⭐️⭐️⭐️</div>
-          <p class="rev-body" style="margin-top:6px">
-            Faculty replacement was instant when fit wasn’t right. <b>Total transparency</b> throughout.
-          </p>
-        </article>
-      </div>
+        </div>
+        <div class="rev-stars" style="color:#facc15;font-size:16px">⭐️⭐️⭐️⭐️⭐️</div>
+        <p class="rev-body" style="margin-top:6px">
+          Faculty replacement was instant when the fit wasn’t right.  
+          <b>Total transparency</b> throughout the process.
+        </p>
+      </article>
     </div>
 
-    <!-- WhatsApp CTA -->
-    <div style="text-align:center;margin-top:16px">
+    <!-- CTA -->
+    <div style="text-align:center;margin-top:20px">
       <a class="btn btn-wa"
          href="https://wa.me/919010031000?text=Hi%20IITuitions%2C%20please%20match%20a%20mentor%20to%20my%20child"
-         target="_blank" rel="noopener">💬 Match a mentor to my child</a>
+         target="_blank" rel="noopener" style="font-size:18px;padding:14px 26px">
+         💬 Match a Mentor to My Child
+      </a>
     </div>
   </div>
 </section>
-<!-- ========== /GOOGLE REVIEWS ========== -->
+
+
+
+  
 
   
 
