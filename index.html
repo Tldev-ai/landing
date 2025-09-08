@@ -1230,23 +1230,7 @@
 
 <script>
   <script>
-// --- Toggle "Is this an exam?" ---
-const examAcc   = document.getElementById('examAcc');
-const examHead  = document.getElementById('examToggle');
-const examBody  = document.getElementById('examBody');
 
-if (examHead) {
-  examHead.addEventListener('click', () => {
-    const isOpen = examAcc.classList.toggle('open');
-    examHead.setAttribute('aria-expanded', String(isOpen));
-    examBody.setAttribute('aria-hidden', String(!isOpen));
-  });
-}
-
-// ===== Countdown (shared for both timers) =====
-const deadlineISO = new Date(Date.now() + 2*24*60*60*1000).toISOString();
-// ... (rest of your timer code)
-</script>
 
   // ===== Countdown (shared for both timers) =====
   const deadlineISO = new Date(Date.now() + 2*24*60*60*1000).toISOString();
