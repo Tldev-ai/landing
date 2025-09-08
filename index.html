@@ -631,93 +631,182 @@
 
 
 
+<!-- ================== GOOGLE REVIEWS (Premium) ================== -->
+<style>
+  /* --- Layout wrappers --- */
+  #reviews{background:#f8fafc;padding:40px 0}
+  #reviews .wrap{max-width:1100px;margin:0 auto;padding:0 12px}
 
+  /* Headline */
+  #reviews .headline{
+    text-align:center;margin-bottom:12px;font-weight:900;line-height:1.2
+  }
+  #reviews .headline .em{color:#10b981}
 
+  /* Rating strip */
+  .rating-box{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:#fff;border:1px solid #eef2f7;border-radius:18px;
+    padding:12px 16px;margin:0 auto 18px;box-shadow:0 10px 26px rgba(0,0,0,.06);
+    max-width:720px;font-weight:800;color:#0b1220
+  }
+  .glogo{display:inline-flex;align-items:center;gap:6px}
+  .glogo svg{width:18px;height:18px}
+  .stars{color:#facc15;font-size:18px;letter-spacing:1px}
+  .muted{color:#64748b;font-weight:600}
 
-  <section id="reviews" style="padding:36px 0;background:#f8fafc">
-  <div class="container">
-    <!-- Better Title -->
-    <h2 class="section-title" style="margin-bottom:10px;text-align:center">
-      4.9★ Rated by 200+ Parents — <span style="color:#10b981">Why 200+ Parents Choose iiTuitions Over Big Batches</span>
+  /* Screenshots row (click to zoom) */
+  .shot-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;max-width:980px;margin:0 auto 20px}
+  .shot-row img{width:100%;display:block;border-radius:14px;background:#f3f4f6;border:1px solid #e5e7eb;cursor:zoom-in;box-shadow:0 8px 22px rgba(0,0,0,.05)}
+  @media (max-width:780px){ .shot-row{grid-template-columns:1fr} }
+
+  /* Review cards carousel */
+  .rev-rail{position:relative}
+  .rev-list{
+    display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:8px 2px 14px
+  }
+  .rev-list::-webkit-scrollbar{display:none}
+  .rev-card{
+    scroll-snap-align:start;min-width:clamp(280px,78vw,360px);
+    background:#fff;border:1px solid #eef2f7;border-radius:18px;padding:16px;
+    box-shadow:0 12px 28px rgba(0,0,0,.06)
+  }
+  .rev-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .rev-avatar{width:46px;height:46px;border-radius:999px;object-fit:cover;background:#eef2f7;border:1px solid #e5e7eb}
+  .rev-name{font-weight:900}
+  .badge{color:#10b981;font-weight:800}
+  .rev-meta{font-size:12px;color:#64748b}
+  .rev-stars{color:#facc15;margin:4px 0}
+  .rev-body{color:#111827}
+  .hi{color:#10b981;font-weight:800} /* highlight numbers/benefits */
+
+  /* Sticky CTA (sticks while this section is on screen) */
+  .cta-stick{
+    position:sticky;bottom:6px;display:flex;justify-content:center;margin-top:18px
+  }
+  .cta-stick .btn{font-size:18px;padding:12px 24px}
+
+  /* Lightbox modal */
+  .lightbox{position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.7);z-index:1000}
+  .lightbox.open{display:grid}
+  .lightbox img{max-width:min(1000px,94vw);max-height:88vh;border-radius:14px;box-shadow:0 24px 64px rgba(0,0,0,.5)}
+  .lightbox .close{
+    position:absolute;top:16px;right:16px;background:#fff;border:none;border-radius:10px;
+    padding:8px 10px;font-weight:900;cursor:pointer
+  }
+</style>
+
+<section id="reviews">
+  <div class="wrap">
+    <!-- Headline -->
+    <h2 class="headline section-title">
+      4.9★ Rated by 200+ Parents — <span class="em">Why Families Choose iiTuitions Over Big Batches</span>
     </h2>
 
-    <!-- Ratings Strip -->
-    <div class="ratings-strip">
-      <span class="stars" style="font-size:20px;color:#facc15">⭐️⭐️⭐️⭐️⭐️</span>
-      <span style="font-weight:700;font-size:18px">4.9/5</span>
-      <small style="color:#475569;font-weight:600"> • 200+ Google Reviews</small>
+    <!-- Rating strip -->
+    <div class="rating-box">
+      <span class="stars">⭐️⭐️⭐️⭐️⭐️</span>
+      <span style="font-weight:900">4.9/5</span>
+      <span class="muted">•</span>
+      <span class="glogo">
+        <!-- Google “G” -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 10.2v3.6h5.1c-.2 1.2-1.5 3.6-5.1 3.6-3.1 0-5.7-2.6-5.7-5.8s2.6-5.8 5.7-5.8c1.8 0 3 .8 3.7 1.5l2.5-2.4C16.8 3.5 14.6 2.6 12 2.6 6.9 2.6 2.8 6.7 2.8 11.8s4.1 9.2 9.2 9.2c5.3 0 8.8-3.7 8.8-9 0-.6-.1-1-.1-1.6H12z"/></svg>
+        <span class="muted">200+ Google Reviews</span>
+      </span>
     </div>
 
-    <!-- 3 Real Google Review Screenshots -->
-    <div class="shots3" style="display:grid;gap:10px;max-width:900px;margin:0 auto 20px">
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
-        <img src="review1.png" alt="Google Review 1" style="width:100%;border-radius:12px">
-        <img src="review2.png" alt="Google Review 2" style="width:100%;border-radius:12px">
-        <img src="review3.png" alt="Google Review 3" style="width:100%;border-radius:12px">
+    <!-- Three clickable Google review screenshots -->
+    <div class="shot-row">
+      <img src="review1.png" alt="Google Review 1" data-full="review1.png">
+      <img src="review2.png" alt="Google Review 2" data-full="review2.png">
+      <img src="review3.png" alt="Google Review 3" data-full="review3.png">
+    </div>
+
+    <!-- Review cards (carousel on mobile) -->
+    <div class="rev-rail">
+      <div class="rev-list" aria-label="Parent reviews">
+        <!-- Card 1 -->
+        <article class="rev-card">
+          <div class="rev-head">
+            <img class="rev-avatar" src="parent1.jpg" alt="Srinivas Reddy">
+            <div>
+              <div class="rev-name">Srinivas Reddy <span class="badge">✔ Verified Parent</span></div>
+              <div class="rev-meta">Posted May 2025</div>
+            </div>
+          </div>
+          <div class="rev-stars">⭐️⭐️⭐️⭐️⭐️</div>
+          <p class="rev-body">
+            Physics went from <span class="hi">48% → 90%</span> in just <span class="hi">8 weeks</span>.  
+            The <b>daily WhatsApp updates</b> kept us informed and confident.
+          </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="rev-card">
+          <div class="rev-head">
+            <img class="rev-avatar" src="parent2.jpg" alt="Meena Sharma">
+            <div>
+              <div class="rev-name">Meena Sharma <span class="badge">✔ Verified Parent</span></div>
+              <div class="rev-meta">Posted Apr 2025</div>
+            </div>
+          </div>
+          <div class="rev-stars">⭐️⭐️⭐️⭐️⭐️</div>
+          <p class="rev-body">
+            True <span class="hi">1-on-1 mentorship</span>. Weekly review calls + <b>recorded sessions</b> were game changers.
+          </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="rev-card">
+          <div class="rev-head">
+            <img class="rev-avatar" src="parent3.jpg" alt="Arun Kumar">
+            <div>
+              <div class="rev-name">Arun Kumar <span class="badge">✔ Verified Parent</span></div>
+              <div class="rev-meta">Posted Feb 2025</div>
+            </div>
+          </div>
+          <div class="rev-stars">⭐️⭐️⭐️⭐️⭐️</div>
+          <p class="rev-body">
+            Faculty replacement was instant when the fit wasn’t right. <b>Total transparency</b> throughout.
+          </p>
+        </article>
       </div>
     </div>
 
-    <!-- Reviews Carousel -->
-    <div class="reviews">
-      <!-- Review Card 1 -->
-      <article class="rev-card">
-        <div class="rev-head">
-          <img class="rev-avatar" src="parent1.jpg" alt="Parent photo">
-          <div>
-            <div class="rev-name">Srinivas Reddy <span style="color:#10b981">✔ Verified Parent</span></div>
-            <div class="rev-meta">May 2025</div>
-          </div>
-        </div>
-        <div class="rev-stars" style="color:#facc15;font-size:16px">⭐️⭐️⭐️⭐️⭐️</div>
-        <p class="rev-body" style="margin-top:6px">
-          Physics went from <b>48% → 90%</b> in just 8 weeks.  
-          The <b>daily WhatsApp updates</b> kept us informed and confident.
-        </p>
-      </article>
-
-      <!-- Review Card 2 -->
-      <article class="rev-card">
-        <div class="rev-head">
-          <img class="rev-avatar" src="parent2.jpg" alt="Parent photo">
-          <div>
-            <div class="rev-name">Meena Sharma <span style="color:#10b981">✔ Verified Parent</span></div>
-            <div class="rev-meta">Apr 2025</div>
-          </div>
-        </div>
-        <div class="rev-stars" style="color:#facc15;font-size:16px">⭐️⭐️⭐️⭐️⭐️</div>
-        <p class="rev-body" style="margin-top:6px">
-          True <b>1-on-1 mentorship</b>.  
-          Weekly review calls + recorded sessions were game changers.
-        </p>
-      </article>
-
-      <!-- Review Card 3 -->
-      <article class="rev-card">
-        <div class="rev-head">
-          <img class="rev-avatar" src="parent3.jpg" alt="Parent photo">
-          <div>
-            <div class="rev-name">Arun Kumar <span style="color:#10b981">✔ Verified Parent</span></div>
-            <div class="rev-meta">Feb 2025</div>
-          </div>
-        </div>
-        <div class="rev-stars" style="color:#facc15;font-size:16px">⭐️⭐️⭐️⭐️⭐️</div>
-        <p class="rev-body" style="margin-top:6px">
-          Faculty replacement was instant when the fit wasn’t right.  
-          <b>Total transparency</b> throughout the process.
-        </p>
-      </article>
-    </div>
-
-    <!-- CTA -->
-    <div style="text-align:center;margin-top:20px">
-      <a class="btn btn-wa"
-         href="https://wa.me/919010031000?text=Hi%20IITuitions%2C%20please%20match%20a%20mentor%20to%20my%20child"
-         target="_blank" rel="noopener" style="font-size:18px;padding:14px 26px">
-         💬 Match a Mentor to My Child
+    <!-- Sticky CTA (sticks while scrolling inside this section) -->
+    <div class="cta-stick">
+      <a class="btn btn-wa" href="https://wa.me/919010031000?text=Hi%20IITuitions%2C%20please%20match%20a%20mentor%20to%20my%20child" target="_blank" rel="noopener">
+        💬 Match a Mentor to My Child
       </a>
     </div>
   </div>
 </section>
+
+<!-- Lightbox for screenshots -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="close" id="lbClose" aria-label="Close">✕</button>
+  <img id="lbImg" alt="Google review full view">
+</div>
+
+<script>
+  // Click-to-zoom screenshots
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbClose = document.getElementById('lbClose');
+
+  document.querySelectorAll('.shot-row img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lbImg.src = img.dataset.full || img.src;
+      lb.classList.add('open');
+    });
+  });
+  lbClose.addEventListener('click',()=> lb.classList.remove('open'));
+  lb.addEventListener('click',e=>{ if(e.target===lb) lb.classList.remove('open'); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('open'); });
+</script>
+<!-- ================== /GOOGLE REVIEWS (Premium) ================== -->
+
 
 
 
