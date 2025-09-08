@@ -770,66 +770,140 @@
 
   
 
-  <!-- Footer -->
-  <footer class="footer" id="contact">
-    <div class="container foot-top">
-      <div class="foot-grid">
-        <div>
-          <div class="foot-title">📘 IITuitions</div>
-          <p class="addr">Helping students crack IIT JEE examinations and secure admissions into premier IITs and NITs since 2017.</p>
-          <p><a class="btn btn-wa" href="https://wa.me/919010031000?text=Hi%20IITuitions%2C%20please%20book%20my%20free%20assessment" target="_blank" rel="noopener">Book on WhatsApp</a></p>
-        </div>
-        <div>
-          <div class="foot-title">Quick Links</div>
-          <ul class="foot-links">
-            <li><a href="#process">How It Works</a></li>
-            <li><a href="#success">Success Stories</a></li>
-            <li><a href="#why">Why Us</a></li>
-            <li><a href="#founder">Founder</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="foot-title">Programs</div>
-          <ul class="foot-links">
-            <li><a href="#process">IIT JEE Program</a></li>
-            <li><a href="#process">Mentorship Sessions</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="foot-title">Contact Us</div>
-          <ul class="foot-links">
-            <li>📞 <a href="tel:+919010031000">+91 9010031000</a></li>
-            <li>✉️ <a href="mailto:hello@iituitions.com">hello@iituitions.com</a></li>
-          </ul>
-          <div class="addr">
-            <div>📍 IITuitions Hub LLP,</div>
-            <div>Nallagandla, Hyderabad 500019,</div>
-            <div>India</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bar">© <span id="yr">2025</span> IITuitions. All rights reserved.</div>
-  </footer>
+  <!-- ================== FINAL COUNTDOWN + CTA + FLOATING BUTTONS ================== -->
+<style>
+  /* Dark sections */
+  .final-dark{background:#0a0a0a;color:#fff}
+  .final-wrap{max-width:980px;margin:0 auto;padding:0 14px}
 
-  <script>
-    // Mobile menu
-    const hamb = document.getElementById('hamb');
-    const menu = document.getElementById('menu');
-    if(hamb){
-      hamb.addEventListener('click', ()=> menu.classList.toggle('open'));
-      document.addEventListener('click', (e)=>{
-        if(menu.classList.contains('open') && !menu.contains(e.target) && !hamb.contains(e.target)){
-          menu.classList.remove('open');
-        }
-      });
+  /* Timer bar (image-1) */
+  #deadline{
+    padding:18px 0;border-top:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.08)
+  }
+  .dead-top{display:flex;justify-content:center;gap:8px;align-items:center;margin-bottom:6px}
+  .dead-top b{font-weight:800}
+  .dead-timer{
+    font-variant-numeric:tabular-nums;letter-spacing:2px;
+    font-weight:900;font-size:42px;text-align:center;line-height:1
+  }
+  .dead-sub{opacity:.9;text-align:center;margin-top:6px}
+
+  /* Final CTA (image-2) */
+  #final-cta{padding:42px 0 60px}
+  #final-cta h2{
+    font-size:clamp(26px,6vw,44px);line-height:1.15;font-weight:900;text-align:center;margin-bottom:10px
+  }
+  #final-cta p.lead{
+    text-align:center;opacity:.92;max-width:780px;margin:0 auto 16px;font-size:clamp(15px,3.2vw,18px)
+  }
+  .cta-btn{
+    display:inline-flex;gap:10px;align-items:center;justify-content:center;
+    padding:14px 22px;border-radius:999px;background:#fff;color:#000;
+    font-weight:900;border:2px solid rgba(255,255,255,.15);
+    box-shadow:0 14px 34px rgba(0,0,0,.35)
+  }
+  .cta-wrap{display:flex;justify-content:center;margin:16px 0}
+  .cta-small{opacity:.9;text-align:center;margin-top:6px}
+  .about{opacity:.85;max-width:760px;margin:18px auto 0;text-align:center;line-height:1.7}
+
+  /* Floating buttons */
+  .float-btn{
+    position:fixed;z-index:60;bottom:14px;display:flex;align-items:center;gap:10px;
+    padding:14px 18px;border-radius:999px;border:2px solid rgba(0,0,0,.08);
+    box-shadow:0 18px 40px rgba(0,0,0,.28);font-weight:900
+  }
+  .float-wa{
+    left:14px;background:var(--wa,#25D366);color:#fff
+  }
+  .float-cta{
+    right:14px;background:#fff;color:#000
+  }
+  .float-btn .ic{font-size:20px;line-height:0}
+  .float-btn:active{transform:translateY(1px)}
+
+  /* Safe area on small screens */
+  @media (max-width:480px){
+    .float-btn{padding:12px 14px}
+    .dead-timer{font-size:36px}
+  }
+</style>
+
+<!-- Countdown strip (image-1) -->
+<section id="deadline" class="final-dark">
+  <div class="final-wrap">
+    <div class="dead-top">
+      <span>⚡</span>
+      <span>Limited seats left for <b id="batchLabel">September</b> batch</span>
+    </div>
+    <div class="dead-timer" id="timerBig">00:00:00</div>
+    <div class="dead-sub" id="deadlineSub">Applications close in <b id="daysLeft">2</b> days</div>
+  </div>
+</section>
+
+<!-- Final hero + CTA (image-2) -->
+<section id="final-cta" class="final-dark">
+  <div class="final-wrap">
+    <h2>Your Child’s IIT Dream Starts Now</h2>
+    <p class="lead">Join the exclusive cohort of 50 students who get personal mentorship from IIT/NIT toppers.</p>
+
+    <div class="cta-wrap">
+      <a class="cta-btn" href="https://wa.me/919010031000?text=Hi%20IITuitions%2C%20please%20book%20my%20free%20assessment" target="_blank" rel="noopener">
+        📋 Book Free Assessment
+      </a>
+    </div>
+    <div class="cta-small">Offer ends in <b id="timerSmall">00:00:00</b></div>
+
+    <p class="about">Helping students crack IIT JEE examinations and secure admissions into premier IITs and NITs since 2017.</p>
+  </div>
+</section>
+
+<!-- Floating buttons -->
+<a class="float-btn float-wa" href="https://wa.me/919010031000?text=Hi%20IITuitions%2C%20please%20book%20my%20free%20assessment" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="ic">💬</span> WhatsApp
+</a>
+<a class="float-btn float-cta" href="https://wa.me/919010031000?text=Hi%20IITuitions%2C%20please%20book%20my%20free%20assessment" target="_blank" rel="noopener" aria-label="Book Free Assessment">
+  📋 Book Free Assessment
+</a>
+
+<script>
+  // ===== Countdown (shared for both timers) =====
+  // Set your deadline here (local time). Example: 2 days from now.
+  // Tip: replace with a real closing datetime like '2025-09-12T23:59:59'
+  const deadlineISO = new Date(Date.now() + 2*24*60*60*1000).toISOString();
+
+  const DLINE = new Date(deadlineISO);
+  const bigEl = document.getElementById('timerBig');
+  const smallEl = document.getElementById('timerSmall');
+  const daysLeftEl = document.getElementById('daysLeft');
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function tick(){
+    const now = new Date();
+    let diff = Math.max(0, DLINE - now);
+    const d = Math.floor(diff / (24*60*60*1000)); diff -= d*24*60*60*1000;
+    const h = Math.floor(diff / (60*60*1000));    diff -= h*60*60*1000;
+    const m = Math.floor(diff / (60*1000));       diff -= m*60*1000;
+    const s = Math.floor(diff / 1000);
+
+    const hh = pad(d*24 + h); // roll days into hours for display
+    const display = `${hh}:${pad(m)}:${pad(s)}`;
+    bigEl.textContent = display;
+    smallEl.textContent = display;
+
+    // Days label under the big timer
+    daysLeftEl.textContent = Math.max(0, d);
+
+    if(DLINE - now <= 0){
+      clearInterval(tmr);
+      bigEl.textContent = '00:00:00';
+      smallEl.textContent = '00:00:00';
     }
-    // Accordions
-    document.querySelectorAll('.accordion .acc-h').forEach(h=>{
-      h.addEventListener('click',()=> h.parentElement.classList.toggle('open'));
-    });
-    // Year
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  }
+  const tmr = setInterval(tick, 1000); tick();
+
+  // Optional: auto-set the month label (“September”)
+  const month = DLINE.toLocaleString(undefined, { month:'long' });
+  document.getElementById('batchLabel').textContent = month;
+</script>
+<!-- ================== /FINAL COUNTDOWN + CTA + FLOATING BUTTONS ================== -->
