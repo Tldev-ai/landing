@@ -173,6 +173,10 @@
   .card{ padding:18px; }
   .why-grid .card + .card{ margin-top:12px; }
 }
+/* Exam accordion styling */
+.qmark{ color:#ef4444; font-weight:900; margin-right:10px; font-size:22px; line-height:1; }
+.acc-h{ cursor:pointer; }
+.accordion.open .acc-b{ display:block; }
 
 
     /* Comparison */
@@ -363,12 +367,24 @@
           </div>
 
           <div class="accordion" id="examAcc">
-            <div class="acc-h"><span>❓ “Is this an exam?”</span><span class="toggle">⌄</span></div>
-            <div class="acc-b">
-              <p>Nope 🙂 — this isn’t a memory-based test. Our IIT mentors <b>talk 1-on-1</b> with your child, <b>teach a sample concept</b>, and ask a few <b>conceptual &amp; numerical questions</b> to understand real comprehension and application. It’s <b>stress-free</b> and focused on <b>diagnosis, not scores</b>.</p>
-            </div>
-          </div>
-        </div>
+  <div class="acc-h" id="examToggle" role="button" aria-expanded="false">
+    <span class="qmark">?</span>
+    <span>❓ “Is this an exam?”</span>
+    <span class="toggle">⌄</span>
+  </div>
+  <div class="acc-b" id="examBody" aria-hidden="true">
+    <p>
+      Nope 🙂 — this isn’t a memory-based test. Our IIT mentors <b>talk 1-on-1</b> with your child,
+      <b>teach a sample concept</b>, and ask a few <b>conceptual &amp; numerical questions</b> to understand
+      their <b>learning style</b>.
+    </p>
+    <p style="margin-top:10px;font-style:italic">
+      No marks. No stress. Pure understanding.
+    </p>
+    <p style="margin-top:6px">✅</p>
+  </div>
+</div>
+
 
         <!-- Step 2 header -->
         <article class="step" id="roadmap-step">
@@ -1213,6 +1229,25 @@
 </a>
 
 <script>
+  <script>
+// --- Toggle "Is this an exam?" ---
+const examAcc   = document.getElementById('examAcc');
+const examHead  = document.getElementById('examToggle');
+const examBody  = document.getElementById('examBody');
+
+if (examHead) {
+  examHead.addEventListener('click', () => {
+    const isOpen = examAcc.classList.toggle('open');
+    examHead.setAttribute('aria-expanded', String(isOpen));
+    examBody.setAttribute('aria-hidden', String(!isOpen));
+  });
+}
+
+// ===== Countdown (shared for both timers) =====
+const deadlineISO = new Date(Date.now() + 2*24*60*60*1000).toISOString();
+// ... (rest of your timer code)
+</script>
+
   // ===== Countdown (shared for both timers) =====
   const deadlineISO = new Date(Date.now() + 2*24*60*60*1000).toISOString();
   const DLINE = new Date(deadlineISO);
