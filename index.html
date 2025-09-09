@@ -363,13 +363,22 @@
             </ul>
           </div>
 
-          <div class="accordion" id="examAcc">
-            <div class="acc-h"><span>❓ “Is this an exam?”</span><span class="toggle">⌄</span></div>
-            <div class="acc-b">
-              <p>Nope 🙂 — this isn’t a memory-based test. Our IIT mentors <b>talk 1-on-1</b> with your child, <b>teach a sample concept</b>, and ask a few <b>conceptual &amp; numerical questions</b> to understand real comprehension and application. It’s <b>stress-free</b> and focused on <b>diagnosis, not scores</b>.</p>
-            </div>
-          </div>
-        </div>
+          <!-- Assessment accordion -->
+<div class="accordion" id="examAcc">
+  <div class="acc-h"><span>❓ “Is this an exam?”</span><span class="toggle">⌄</span></div>
+  <div class="acc-b">
+    <p>
+      Nope 🙂 — this isn’t a memory-based test. Our IIT mentors <b>talk 1-on-1</b> with your child,
+      teach a <b>sample concept</b>, and ask a few <b>conceptual &amp; numerical questions</b>
+      to understand their <b>learning style</b>.
+    </p>
+    <p style="margin-top:8px;color:#475569;font-style:italic">
+      No marks. No stress. Pure understanding.
+    </p>
+    <div style="margin-top:8px;font-size:20px">✅</div>
+  </div>
+</div>
+
 
         <article class="step" id="roadmap-step">
           <div class="num">2</div>
@@ -978,5 +987,32 @@
     const batchLabel = document.getElementById('batchLabel');
     if (batchLabel) batchLabel.textContent = month;
   </script>
+  <script>
+// --- Accordion: "Is this an exam?" ---
+(() => {
+  const acc  = document.getElementById('examAcc');
+  if (!acc) return;
+  const head = acc.querySelector('.acc-h');
+  const body = acc.querySelector('.acc-b');
+
+  // a11y hints
+  head.setAttribute('role','button');
+  head.setAttribute('tabindex','0');
+  head.setAttribute('aria-expanded','false');
+  body.setAttribute('aria-hidden','true');
+
+  function toggle() {
+    const isOpen = acc.classList.toggle('open');
+    head.setAttribute('aria-expanded', String(isOpen));
+    body.setAttribute('aria-hidden', String(!isOpen));
+  }
+
+  head.addEventListener('click', toggle);
+  head.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
+})();
+</script>
+
 </body>
 </html>
