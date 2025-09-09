@@ -82,32 +82,11 @@
     .accordion.open .acc-b{display:block}
     .accordion.open .toggle{transform:rotate(180deg)}
     .toggle{transition:.2s}
+    #examAcc, #scenarioAcc { margin-bottom:14px; }
+    #assessment-details, #roadmap-details { margin-bottom:14px; }
+
     #scenarioAcc { margin-bottom: 14px; }  /* space before Step 3 */
-    <script>
-// Enable all accordions on the page
-document.querySelectorAll('.accordion').forEach((acc) => {
-  const head = acc.querySelector('.acc-h');
-  const body = acc.querySelector('.acc-b');
-  if (!head || !body) return;
-
-  head.setAttribute('role','button');
-  head.setAttribute('tabindex','0');
-  head.setAttribute('aria-expanded','false');
-  body.setAttribute('aria-hidden','true');
-
-  function toggle() {
-    const isOpen = acc.classList.toggle('open');
-    head.setAttribute('aria-expanded', String(isOpen));
-    body.setAttribute('aria-hidden', String(!isOpen));
-  }
-
-  head.addEventListener('click', toggle);
-  head.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-  });
-});
-</script>
-
+    
 
 
     /* Guarantee badge */
@@ -1069,31 +1048,30 @@ document.querySelectorAll('.accordion').forEach((acc) => {
     if (batchLabel) batchLabel.textContent = month;
   </script>
   <script>
-// --- Accordion: "Is this an exam?" ---
-(() => {
-  const acc  = document.getElementById('examAcc');
-  if (!acc) return;
-  const head = acc.querySelector('.acc-h');
-  const body = acc.querySelector('.acc-b');
+  // Make every .accordion clickable (examAcc + scenarioAcc + others)
+  document.querySelectorAll('.accordion').forEach((acc) => {
+    const head = acc.querySelector('.acc-h');
+    const body = acc.querySelector('.acc-b');
+    if (!head || !body) return;
 
-  // a11y hints
-  head.setAttribute('role','button');
-  head.setAttribute('tabindex','0');
-  head.setAttribute('aria-expanded','false');
-  body.setAttribute('aria-hidden','true');
+    head.setAttribute('role','button');
+    head.setAttribute('tabindex','0');
+    head.setAttribute('aria-expanded','false');
+    body.setAttribute('aria-hidden','true');
 
-  function toggle() {
-    const isOpen = acc.classList.toggle('open');
-    head.setAttribute('aria-expanded', String(isOpen));
-    body.setAttribute('aria-hidden', String(!isOpen));
-  }
+    function toggle() {
+      const isOpen = acc.classList.toggle('open');
+      head.setAttribute('aria-expanded', String(isOpen));
+      body.setAttribute('aria-hidden', String(!isOpen));
+    }
 
-  head.addEventListener('click', toggle);
-  head.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    head.addEventListener('click', toggle);
+    head.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
   });
-})();
 </script>
+
 
 </body>
 </html>
