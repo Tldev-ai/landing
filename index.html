@@ -82,6 +82,33 @@
     .accordion.open .acc-b{display:block}
     .accordion.open .toggle{transform:rotate(180deg)}
     .toggle{transition:.2s}
+    #scenarioAcc { margin-bottom: 14px; }  /* space before Step 3 */
+    <script>
+// Enable all accordions on the page
+document.querySelectorAll('.accordion').forEach((acc) => {
+  const head = acc.querySelector('.acc-h');
+  const body = acc.querySelector('.acc-b');
+  if (!head || !body) return;
+
+  head.setAttribute('role','button');
+  head.setAttribute('tabindex','0');
+  head.setAttribute('aria-expanded','false');
+  body.setAttribute('aria-hidden','true');
+
+  function toggle() {
+    const isOpen = acc.classList.toggle('open');
+    head.setAttribute('aria-expanded', String(isOpen));
+    body.setAttribute('aria-hidden', String(!isOpen));
+  }
+
+  head.addEventListener('click', toggle);
+  head.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
+});
+</script>
+
+
 
     /* Guarantee badge */
     .guarantee-badge{
