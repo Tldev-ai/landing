@@ -530,36 +530,56 @@
   </section>
 
   <!-- ===== WhatsApp rail (side-scroll, big) ===== -->
-  <section class="wa-rail" style="background:#fff;padding:24px 0">
-    <div class="container">
-      <h2 class="section-title">What Parents Text Us</h2>
-    <div class="card-xl shot">
-  <div class="img" style="background-image:url('img'); background-size:cover; background-position:center;"></div>
-  <div class="title">58% in Jan → AIR 238 (Roadmap + micro-tests)</div>
-</div>
-      
+  <!-- ===== WhatsApp rail (side-scroll, square cards) ===== -->
+<section class="wa-rail" style="background:#fff;padding:24px 0">
+  <style>
+    /* Square, tidy WhatsApp cards just for this section */
+    .wa-rail .carousel { padding:10px var(--padX) 16px; }
+    .wa-rail .card-xl { min-width:clamp(240px,62vw,360px); padding:12px; border-radius:16px; }
+    .wa-rail .shot { background:#ecfdf5; border:1px solid #c7f0db; }
+    .wa-rail .shot .img{
+      aspect-ratio:1/1;                      /* square */
+      min-height:clamp(240px,54vw,360px);    /* responsive height */
+      background-size:cover;
+      background-position:center;
+      border-radius:12px;
+      box-shadow:0 10px 24px rgba(0,0,0,.06);
+    }
+    .wa-rail .shot .title{
+      margin-top:10px; font-weight:900; font-size:18px; line-height:1.35; color:#065f46;
+    }
+  </style>
 
-  
-          <div class="card-xl shot">
-  <div class="img" style="background-image:url('img'); background-size:cover; background-position:center;"></div>
-  <div class="title">Referral from AIR 55 parent → Free assessment + roadmap</div>
-</div>
+  <div class="container">
+    <h2 class="section-title">What Parents Text Us</h2>
 
-      <div class="card-xl shot">
-  <div class="img" style="background-image:url('img'); background-size:cover; background-position:center;"></div>
-  <div class="title">“Thanks for daily updates, he’s finally consistent”</div>
-</div>
+    <div class="carousel-wrapper">
+      <div class="carousel" aria-label="Parent WhatsApp messages">
 
-
-          
-          <div class="card-xl shot">
-            <div class="img"></div>
-            <div class="title">Chemistry accuracy up by 35% in 1 month</div>
-          </div>
+        <div class="card-xl shot">
+          <div class="img" style="background-image:url('3.png');"></div>
+          <div class="title">58% in Jan → AIR 238 (Roadmap + micro-tests)</div>
         </div>
+
+        <div class="card-xl shot">
+          <div class="img" style="background-image:url('1.png');"></div>
+          <div class="title">Referral from AIR 55 parent → Free assessment + roadmap</div>
+        </div>
+
+        <div class="card-xl shot">
+          <div class="img" style="background-image:url('2.png');"></div>
+          <div class="title">“Thanks for daily updates, he’s finally consistent”</div>
+        </div>
+
+        <div class="card-xl shot">
+          <div class="img" style="background-image:url('chem-35.png');"></div>
+          <div class="title">Chemistry accuracy up by 35% in 1 month</div>
+        </div>
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ===== Toppers (large photo cards, no profiles) ===== -->
   <section class="success" id="success" style="padding:24px 0">
