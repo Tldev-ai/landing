@@ -548,6 +548,21 @@
     .wa-rail .shot .title{
       margin-top:10px; font-weight:900; font-size:18px; line-height:1.35; color:#065f46;
     }
+        /* name chip */
+    .wa-rail .shot .img{ position: relative; }  /* allows absolutely positioned chip */
+    .wa-rail .chip{
+      position: absolute;
+      top: 10px; left: 10px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,0.92);
+      color: #0b1220;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      backdrop-filter: blur(4px);
+    }
+
   </style>
 
   <div class="container">
@@ -557,22 +572,30 @@
   <div class="carousel" aria-label="Parent WhatsApp messages">
 
     <!-- 2 -->
-    <div class="card-xl shot">
-      <div class="img" style="background-image:url('6.png.jpeg');"></div>
-      <div class="title">From 58% in Jan → AIR 1898 — “Your roadmap + micro-tests changed everything”</div>
-    </div>
+    <!-- 2 -->
+<div class="card-xl shot">
+  <div class="img" style="background-image:url('6.png.jpeg');">
+    <span class="chip">Venkatesh Reddy</span>
+  </div>
+  <div class="title">From 58% in Jan → AIR 1898 — “Your roadmap + micro-tests changed everything”</div>
+</div>
 
-    <!-- 3 -->
-    <div class="card-xl shot">
-      <div class="img" style="background-image:url('7.png.jpeg');"></div>
-      <div class="title">Micro-test 8/10; school weekly test jumped 9/20 → 14/20 — steady improvement</div>
-    </div>
+<!-- 3 -->
+<div class="card-xl shot">
+  <div class="img" style="background-image:url('7.png.jpeg');">
+    <span class="chip">Swathi Reddy</span>
+  </div>
+  <div class="title">Micro-test 8/10; school weekly test jumped 9/20 → 14/20 — steady improvement</div>
+</div>
 
-    <!-- 4 -->
-    <div class="card-xl shot">
-      <div class="img" style="background-image:url('8.png.jpeg');"></div>
-      <div class="title">Referral from IIT-Bombay parent → booked free assessment → personalized roadmap</div>
-    </div>
+<!-- 4 -->
+<div class="card-xl shot">
+  <div class="img" style="background-image:url('8.png.jpeg');">
+    <span class="chip">Vidush Chaudhary</span>
+  </div>
+  <div class="title">Referral from IIT-Bombay parent → booked free assessment → personalized roadmap</div>
+</div>
+
 
   </div>
 </div>
