@@ -38,8 +38,8 @@
 
 /* Logo image sizing */
 .logo{ display:inline-flex; align-items:center; gap:10px; font-weight:900; color:#000; font-size:18px }
-.logo-img{ height:36px; width:auto; display:block }
-@media (min-width:768px){ .logo-img{ height:44px } }
+.logo-img{ height:72px; width:auto; display:block }     /* mobile */
+@media (min-width:768px){ .logo-img{ height:96px } }     /* desktop */
 
 
     /* Buttons */
@@ -549,17 +549,18 @@
 <section class="wa-rail" style="background:#fff;padding:24px 0">
   <style>
     /* Square, tidy WhatsApp cards just for this section */
-    .wa-rail .carousel { padding:10px var(--padX) 16px; }
-    .wa-rail .card-xl { min-width:clamp(240px,62vw,360px); padding:12px; border-radius:16px; }
-    .wa-rail .shot { background:#ecfdf5; border:1px solid #c7f0db; }
     .wa-rail .shot .img{
-      aspect-ratio:1/1;                      /* square */
-      min-height:clamp(240px,54vw,360px);    /* responsive height */
-      background-size:cover;
-      background-position:center;
-      border-radius:12px;
-      box-shadow:0 10px 24px rgba(0,0,0,.06);
-    }
+  /* show full portrait screenshot, including the name at the very top */
+  aspect-ratio:3/4;                         /* portrait, not square */
+  min-height:clamp(420px,70vw,680px);       /* taller so the whole shot fits */
+  background-size:contain;                  /* do NOT crop */
+  background-position:top center;           /* keep the header (name) visible */
+  background-repeat:no-repeat;
+  background-color:#f1f5f9;                 /* subtle letterbox color */
+  border-radius:12px;
+  box-shadow:0 10px 24px rgba(0,0,0,.06);
+}
+
     .wa-rail .shot .title{
       margin-top:10px; font-weight:900; font-size:18px; line-height:1.35; color:#065f46;
     }
