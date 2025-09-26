@@ -77,15 +77,16 @@
     .step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--ring);border-radius:16px;padding:14px;box-shadow:0 10px 26px var(--shadow1)}
     .step .num{width:40px;height:40px;border-radius:50%;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
     .step h3{font-size:18px;margin-bottom:2px}
-     .step .sub{
+    .step .sub{
   font-size:16px;
   margin:6px 0 0;
   color:#0b1220;
-  background:#ffeb66;
+  background:transparent;        /* ⬅️ no yellow */
   display:inline-block;
-  padding:2px 8px;
-  border-radius:6px;
+  padding:0;                     /* no chip padding */
+  border-radius:0;
 }
+
 
 
 
@@ -315,6 +316,11 @@
     .wa-rail .container{ max-width:1400px; }              /* keep WhatsApp rail wide */
     #success .container{ max-width:1200px; }              /* ⬅️ slightly narrower now */
     #success h2{ text-align:center; margin-bottom:14px; }
+    /* two-line bullets: heading + sub-line with gaps */
+.bullets li{ margin:14px 0 16px; line-height:1.55; }
+.bullets li b{ display:block; margin-bottom:6px; }
+.li-sub{ display:block; margin-top:0; color:#374151; }
+
   </style>
 </head>
 <body>
@@ -533,11 +539,12 @@
           <p style="margin:8px 0"><i>"In most coaching centres, your child sits in a <b>batch of 200–300 students</b>. The pace is fixed, doubts pile up, and progress slows down."</i></p>
           <p>At iiTuitions, every single session is <b>1-on-1</b> — just your child and an IIT/NIT mentor.</p>
           <ul class="bullets" style="margin-top:8px">
-            <li>🎓 <b>IIT/NIT Mentors Only</b> → No junior faculty. No compromises.</li>
-            <li>🟢 <b>Daily WhatsApp Updates</b> → Topics covered, tests done, progress.</li>
-            <li>💬 <b>Unlimited Doubt Support</b> → WhatsApp group access anytime.</li>
-            <li>🔁 <b>Faculty Replacement Guarantee</b> → Switch instantly if needed.</li>
-            <li>👀 <b>Live Session Monitoring</b> → Both cameras ON; zero time waste.</li>
+            <li>🎓 <b>IIT/NIT Mentors Only</b><span class="li-sub">No junior faculty. No compromises.</span></li>
+<li>🟢 <b>Daily WhatsApp Updates</b><span class="li-sub">Topics covered, tests done, progress.</span></li>
+<li>💬 <b>Unlimited Doubt Support</b><span class="li-sub">WhatsApp group access anytime.</span></li>
+<li>🔁 <b>Faculty Replacement Guarantee</b><span class="li-sub">Switch instantly if needed.</span></li>
+<li>👀 <b>Live Session Monitoring</b><span class="li-sub">Both cameras ON; zero time waste.</span></li>
+
           </ul>
           <p style="margin-top:10px"><b>Your Child, Their Mentor, One Goal — Crack JEE.</b></p>
         </div>
@@ -557,12 +564,13 @@
           <p style="margin:8px 0">At <b>iiTuitions</b>, we don’t let that happen.</p>
           <p style="margin:12px 0 6px"><b>Here’s how we track and improve performance in real time:</b></p>
           <ul class="bullets">
-            <li>🍀 <b>Micro Tests After Every Topic</b> → We immediately check if your child has <b>grasped the concept</b>.</li>
-            <li>📚 <b>Macro Tests After 2–3 Topics</b> → To measure <b>concept linking and retention</b>.</li>
-            <li>🗂️ <b>Revision Tests Regularly</b> → Ensuring your child <b>retains, recalls, and applies</b>.</li>
-            <li>📊 <b>Weekly Parent Discussions</b> → We share insights, patterns, and next steps.</li>
-            <li>⚡ <b>Instant Strategy Corrections</b> → If something isn’t working, we <b>fix it then and there</b>.</li>
-            <li>🤝 <b>Parent Support Is Key</b> → Our best results came when <b>parents worked closely with us</b>.</li>
+            <li>🍀 <b>Micro Tests After Every Topic</b><span class="li-sub">We immediately check if your child has <b>grasped the concept</b>.</span></li>
+<li>📚 <b>Macro Tests After 2–3 Topics</b><span class="li-sub">To measure <b>concept linking and retention</b>.</span></li>
+<li>🗂️ <b>Revision Tests Regularly</b><span class="li-sub">Ensuring your child <b>retains, recalls, and applies</b>.</span></li>
+<li>📊 <b>Weekly Parent Discussions</b><span class="li-sub">We share insights, patterns, and next steps.</span></li>
+<li>⚡ <b>Instant Strategy Corrections</b><span class="li-sub">If something isn’t working, we <b>fix it then and there</b>.</span></li>
+<li>🤝 <b>Parent Support Is Key</b><span class="li-sub">Our best results came when <b>parents worked closely with us</b>.</span></li>
+
           </ul>
         </div>
       </div>
