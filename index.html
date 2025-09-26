@@ -316,10 +316,29 @@
     .wa-rail .container{ max-width:1400px; }              /* keep WhatsApp rail wide */
     #success .container{ max-width:1200px; }              /* ⬅️ slightly narrower now */
     #success h2{ text-align:center; margin-bottom:14px; }
-    /* two-line bullets: heading + sub-line with gaps */
-.bullets li{ margin:14px 0 16px; line-height:1.55; }
-.bullets li b{ display:block; margin-bottom:6px; }
-.li-sub{ display:block; margin-top:0; color:#374151; }
+    /* bullets: emoji + title on the same line, sub-line below */
+.bullets{
+  list-style:none;          /* remove default dot */
+  padding-left:0;           /* remove marker gutter */
+  margin-left:0;
+}
+
+.bullets li{
+  margin:14px 0 16px;
+  line-height:1.55;
+}
+
+.bullets li b{
+  display:inline;           /* ⬅️ keep title on SAME line as emoji */
+  margin-left:6px;          /* small gap after the emoji */
+}
+
+.li-sub{
+  display:block;            /* sub-line drops to next line */
+  margin-left:28px;         /* indent to align under the title (after emoji) */
+  color:#374151;
+}
+
 
   </style>
 </head>
