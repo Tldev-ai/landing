@@ -646,16 +646,17 @@
   <style>
     /* Square, tidy WhatsApp cards just for this section */
     .wa-rail .shot .img{
-  /* show full portrait screenshot, including the name at the very top */
-  aspect-ratio:3/4;                         /* portrait, not square */
-  min-height:clamp(420px,70vw,680px);       /* taller so the whole shot fits */
-  background-size:contain;                  /* do NOT crop */
-  background-position:top center;           /* keep the header (name) visible */
+  aspect-ratio:3/4;
+  min-height:clamp(400px,64vw,640px);
+  background-size:cover;                                   /* allow crop */
+  background-position:center calc(-1 * var(--cropTop, 28px));
   background-repeat:no-repeat;
-  background-color:#f1f5f9;                 /* subtle letterbox color */
+  background-color:#f1f5f9;
   border-radius:12px;
   box-shadow:0 10px 24px rgba(0,0,0,.06);
 }
+
+
 
     .wa-rail .shot .title{
       margin-top:10px; font-weight:900; font-size:18px; line-height:1.35; color:#065f46;
@@ -686,7 +687,8 @@
     <!-- 2 -->
     <!-- 2 -->
 <div class="card-xl shot">
-  <div class="img" style="background-image:url('6.png.jpeg');">
+  <div class="img" style="--cropTop:36px; background-image:url('6.png.jpeg');"></div>
+
     
   </div>
   <div class="title">From 58% in Jan → AIR 1898 — “Your roadmap + micro-tests changed everything”</div>
@@ -694,7 +696,8 @@
 
 <!-- 3 -->
 <div class="card-xl shot">
-  <div class="img" style="background-image:url('7.png.jpeg');">
+  <div class="img" style="--cropTop:28px; background-image:url('7.png.jpeg');"></div>
+
     
   </div>
   <div class="title">Micro-test 8/10; school weekly test jumped 9/20 → 14/20 — steady improvement</div>
@@ -702,7 +705,8 @@
 
 <!-- 4 -->
 <div class="card-xl shot">
-  <div class="img" style="background-image:url('8.png.jpeg');">
+  <div class="img" style="--cropTop:32px; background-image:url('8.png.jpeg');"></div>
+
     
   </div>
   <div class="title">Referral from IIT-Bombay parent → booked free assessment → personalized roadmap</div>
@@ -986,9 +990,16 @@
     .m-head{display:flex;align-items:center;gap:12px}
     /* circular avatar like your screenshot */
     .m-ava{
-      width:76px;height:76px;border-radius:999px;object-fit:cover;
-      background:#eef2f7;border:3px solid #e5e7eb;box-shadow:0 8px 22px rgba(0,0,0,.08)
-    }
+  width:76px;
+  height:76px;
+  border-radius:999px;
+  object-fit:cover;
+  object-position:50% 32%;   /* show a bit more top (hair) */
+  background:#0B112D;
+  border:3px solid rgba(255,255,255,.22);
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+
     .m-name{font-weight:900;font-size:18px;line-height:1.2;color:#0b1220}
     .m-meta{font-weight:700;font-size:13px;color:#475569}
     .m-line{margin-top:10px;color:#111827}
