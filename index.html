@@ -962,11 +962,27 @@
     }
     .mentor-list::-webkit-scrollbar{display:none}
     .m-card{
-      scroll-snap-align:start;
-      min-width:clamp(260px,78vw,340px);
-      background:#fff;border:1px solid var(--ring);border-radius:16px;padding:14px;
-      box-shadow:0 10px 26px var(--shadow1)
-    }
+  scroll-snap-align:start;
+  min-width:clamp(260px,78vw,340px);
+  background:#0B112D;                 /* deep navy */
+  border:1px solid #0E1435;           /* subtle navy border */
+  border-radius:16px;
+  padding:14px;
+  box-shadow:0 10px 26px rgba(11,17,45,.32);
+  color:#fff;                         /* default text on card */
+}
+
+/* make text readable on dark card */
+.m-name{ color:#fff; }
+.m-meta{ color:#C7D2FE; }             /* soft indigo for subline */
+.m-line{ color:#E5E7EB; }             /* quote/body line */
+
+/* avatar ring looks better on dark */
+.m-ava{
+  background:#0B112D;
+  border-color:rgba(255,255,255,.22);
+}
+
     .m-head{display:flex;align-items:center;gap:12px}
     /* circular avatar like your screenshot */
     .m-ava{
