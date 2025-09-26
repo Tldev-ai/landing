@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  
+<head>  o
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>IITuitions — Transform Your Child's IIT Dreams into Reality</title>
@@ -25,7 +25,7 @@
 
     .logo{font-weight:900;color:#000;font-size:18px}
     .hamb{width:44px;height:44px;border:none;background:transparent;display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center}
-    .hamb span{display:none}
+    .hamb span{width:24px;height:3px;background:#000;border-radius:2px}
     .nav-actions{display:none}
     .menu{position:absolute;top:100%;right:12px;width:260px;background:#fff;border:1px solid var(--ring);border-radius:14px;box-shadow:0 14px 34px var(--shadow2);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.2s}
     .menu a{display:block;padding:14px 16px;color:#111;font-weight:600;border-bottom:1px solid #f1f5f9}
@@ -301,7 +301,20 @@
   <span class="sr-only">iiTuitions</span>
 </a>
 
-<!-- Hero -->
+
+      
+      <div style="position:relative">
+        <button class="hamb" id="hamb" aria-label="Menu"><span></span><span></span><span></span></button>
+        <nav class="menu" id="menu">
+          <a href="#process">How It Works</a>
+          <a href="#founder">Founder</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
   <section class="hero">
     <div class="wrap">
       <div class="stats">
@@ -632,7 +645,7 @@
 
           <!-- Card 2 -->
           <article class="student-card">
-            <div class="student-photo" style="background-image:url('stu2.png');">
+            <div class="student-photo" style={background-image:url('stu2.png');">
               <div class="student-ribbon">
                 <div class="student-name">Yashwitha</div>
                 <div class="student-score">IIT Delhi Admit</div>
@@ -1085,7 +1098,7 @@
       if(DLINE - now <= 0){
         clearInterval(tmr);
         if (bigEl) bigEl.textContent = '00:00:00';
-        if (smallEl) smallEl.textContent = '00:00:00';
+        if (smallEl) bigEl.textContent = '00:00:00';
       }
     }
     const tmr = setInterval(tick, 1000); tick();
