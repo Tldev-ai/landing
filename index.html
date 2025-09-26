@@ -72,6 +72,36 @@
     .section-title{font-size:24px;font-weight:900;text-align:center;margin:24px 0 12px}
 
     /* Steps & panels */
+    /* ===== Visual 4-step strip (image boxes + plus signs) ===== */
+.formula-row{
+  display:flex; align-items:center; gap:12px;
+  overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+  padding:10px 2px 16px;
+}
+.formula-row::-webkit-scrollbar{ display:none; }
+
+.fbox{
+  scroll-snap-align:start;
+  min-width:clamp(220px,60vw,340px);
+  aspect-ratio: 16 / 6;                 /* long rounded pill */
+  background-size:cover; background-position:center;
+  border:1px solid var(--ring);
+  border-radius:28px;
+  box-shadow:0 10px 24px var(--shadow1);
+  position:relative;
+}
+.fbox .flabel{
+  position:absolute; left:14px; bottom:10px;
+  font-weight:900; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35);
+  background:rgba(0,0,0,.25); padding:4px 8px; border-radius:10px;
+}
+
+.formula-op{
+  min-width:48px; height:48px; flex:0 0 48px;
+  display:grid; place-items:center;
+  font-weight:900; font-size:28px; color:#0b1220;
+}
+
     .process{padding:8px 0 18px}
     .steps{display:grid;gap:22px;max-width:1000px;margin:0 auto}
     .step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--ring);border-radius:16px;padding:14px;box-shadow:0 10px 26px var(--shadow1)}
@@ -439,6 +469,30 @@
 
   <!-- PROCESS -->
   <section class="process" id="process">
+    <!-- Visual 4-step strip -->
+<div class="formula-row" id="formula-strip">
+  <div class="fbox" style="background-image:url('point1.jpg')">
+    <span class="flabel">Point 1</span>
+  </div>
+
+  <div class="formula-op">+</div>
+
+  <div class="fbox" style="background-image:url('point2.jpg')">
+    <span class="flabel">Point 2</span>
+  </div>
+
+  <div class="formula-op">+</div>
+
+  <div class="fbox" style="background-image:url('point3.jpg')">
+    <span class="flabel">Point 3</span>
+  </div>
+
+  <!-- no plus here (as requested) -->
+  <div class="fbox" style="background-image:url('point4.jpg')">
+    <span class="flabel">Point 4</span>
+  </div>
+</div>
+
     <div class="container">
       <h2 class="section-title">Our 4 Steps Success Formula</h2>
 
