@@ -91,13 +91,17 @@
 
     .how-panel{background:#fff;border:1px solid var(--ring);border-radius:18px;padding:16px;box-shadow:0 8px 22px var(--shadow1)}
     .how-panel h5{font-size:18px;font-weight:900;margin-bottom:6px}
-    /* yellow marker-strip for panel headings */
+    
+ /* yellow marker-strip for panel headings */
 .how-panel h5{
   display:inline;
-  color:#0b1220;                              /* black text */
-  background:linear-gradient(transparent 55%, #ffeb66 0);
+  color:#0b1220;
+  background:linear-gradient(transparent 58%, #ffeb66 0) !important; /* force the strip */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;  /* keeps the strip on wrapped lines */
   padding:0 .5px;
 }
+
 
     .muted{color:#475569;font-size:14px;margin-bottom:8px}
     .bullets{margin-left:18px}
