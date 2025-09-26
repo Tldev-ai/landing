@@ -75,7 +75,22 @@
     .process{padding:8px 0 18px}
     .steps{display:grid;gap:22px;max-width:1000px;margin:0 auto}
     .step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--ring);border-radius:16px;padding:14px;box-shadow:0 10px 26px var(--shadow1)}
-    .step .num{width:40px;height:40px;border-radius:50%;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
+    /* perfect round step badge */
+.step .num{
+  width:44px;
+  height:44px;
+  flex:0 0 44px;       /* don't let flex stretch it */
+  aspect-ratio:1 / 1;  /* always a square */
+  display:grid;        /* easy centering */
+  place-items:center;
+  border-radius:999px; /* full circle */
+  background:#0f172a;
+  color:#fff;
+  font-weight:900;
+  font-size:18px;
+  line-height:1;
+}
+
     .step h3{font-size:18px;margin-bottom:2px}
     .step .sub{
   font-size:16px;
