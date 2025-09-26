@@ -338,6 +338,28 @@
   margin-left:28px;         /* indent to align under the title (after emoji) */
   color:#374151;
 }
+    /* small dot before every point */
+.bullets li{
+  position: relative;
+  padding-left: 22px;        /* room for the dot */
+}
+
+.bullets li::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: .6em;                 /* vertically centers with first line */
+  font-size: 14px;
+  line-height: 1;
+  color: #111827;
+  opacity: .95;
+}
+
+/* sub-line aligns under the title (after emoji) */
+.li-sub{
+  margin-left: 34px;         /* a bit more to account for the dot + emoji */
+}
+
 
 
   </style>
