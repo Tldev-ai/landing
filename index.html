@@ -344,21 +344,28 @@
   padding-left: 22px;        /* room for the dot */
 }
 
-.bullets li::before{
-  content: "•";
-  position: absolute;
-  left: 0;
-  top: .6em;                 /* vertically centers with first line */
-  font-size: 14px;
-  line-height: 1;
-  color: #111827;
-  opacity: .95;
+/* crisp, bigger dot bullets */
+.bullets li{
+  position: relative;
+  padding-left: 28px;          /* more room for bigger dot */
 }
 
-/* sub-line aligns under the title (after emoji) */
-.li-sub{
-  margin-left: 34px;         /* a bit more to account for the dot + emoji */
+.bullets li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;                 /* vertical align with first line */
+  width: 10px;                 /* ⬅️ dot size */
+  height: 10px;                /* ⬅️ dot size */
+  border-radius: 50%;
+  background: #111827;         /* dot color */
+  opacity: 0.95;
+  transform: translateY(-50%); /* perfect centering */
 }
+
+/* sub-line stays aligned under emoji/title */
+.li-sub{ margin-left: 34px; }
+
 
 
 
