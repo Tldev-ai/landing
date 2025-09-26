@@ -93,13 +93,15 @@
     .how-panel h5{font-size:18px;font-weight:900;margin-bottom:6px}
     
  /* yellow marker-strip for panel headings */
+/* solid yellow chip for panel headings (affects all 4 h5s) */
 .how-panel h5{
-  display:inline;
+  display:inline-block;
+  background:#ffeb66;
   color:#0b1220;
-  background:linear-gradient(transparent 58%, #ffeb66 0) !important; /* force the strip */
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;  /* keeps the strip on wrapped lines */
-  padding:0 .5px;
+  padding:6px 10px;
+  border-radius:10px;
+  line-height:1.2;
+  box-shadow:0 0 0 1px rgba(0,0,0,0.02) inset; /* subtle crispness */
 }
 
 
@@ -1113,7 +1115,7 @@
       const m = Math.floor(diff / (60*1000)); diff -= m*60*1000;
       const s = Math.floor(diff / 1000);
       const hh = pad(d*24 + h);
-      const display = ${hh}:${pad(m)}:${pad(s)};
+      const display = `${hh}:${pad(m)}:${pad(s)}`;
       if (bigEl) bigEl.textContent = display;
       if (smallEl) smallEl.textContent = display;
       if (daysLeftEl) daysLeftEl.textContent = Math.max(0, d);
