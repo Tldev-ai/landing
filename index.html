@@ -303,7 +303,16 @@
 
 
       
-      
+      <div style="position:relative">
+        <button class="hamb" id="hamb" aria-label="Menu"><span></span><span></span><span></span></button>
+        <nav class="menu" id="menu">
+          <a href="#process">How It Works</a>
+          <a href="#founder">Founder</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
   <!-- Hero -->
   <section class="hero">
@@ -1081,7 +1090,7 @@
       const m = Math.floor(diff / (60*1000)); diff -= m*60*1000;
       const s = Math.floor(diff / 1000);
       const hh = pad(d*24 + h);
-      const display = `${hh}:${pad(m)}:${pad(s)}`;
+      const display = ${hh}:${pad(m)}:${pad(s)};
       if (bigEl) bigEl.textContent = display;
       if (smallEl) smallEl.textContent = display;
       if (daysLeftEl) daysLeftEl.textContent = Math.max(0, d);
