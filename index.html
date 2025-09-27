@@ -229,6 +229,7 @@
       background:#fff;border:1px solid var(--ring);
       border-radius:18px;overflow:hidden;
       box-shadow:0 12px 28px rgba(0,0,0,.08);
+       position: relative;
     }
     .student-photo{
   position:relative;width:100%;
@@ -257,7 +258,12 @@
       display:grid;grid-template-columns:120px 1fr;gap:18px;box-shadow:0 24px 60px rgba(0,0,0,.45);
       max-width:1100px;margin:0 auto;
     }
-    .f-avatar{width:120px;height:120px;border-radius:999px;object-fit:cover;border:2px solid #334155;box-shadow:0 12px 34px rgba(0,0,0,.5);display:block}
+    .f-avatar{
+  width:120px;height:120px;border-radius:999px;object-fit:cover;
+  object-position:50% 18%;           /* show more forehead */
+  border:2px solid #334155;box-shadow:0 12px 34px rgba(0,0,0,.5);display:block;
+}
+
     .f-title{font-size:28px;line-height:1.2;font-weight:900;color:#fff}
     .f-title-strong{display:block;font-size:32px}
     .f-sub{color:#9ca3af;font-style:italic;margin:6px 0 12px}
@@ -346,7 +352,11 @@
       .stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
       .section-title{font-size:36px}
       .f-card{grid-template-columns:220px 1fr;gap:28px}
-      .f-avatar{width:220px;height:220px;border-width:3px}
+      .f-avatar{
+  width:220px;height:220px;border-width:3px;
+  object-position:50% 18%;
+}
+
       .f-title{font-size:40px}.f-title-strong{font-size:44px}
       .card-xl{min-width:420px}
       .carousel-wrapper::before{background:linear-gradient(90deg,#f8fafc,rgba(248,250,252,0))}
