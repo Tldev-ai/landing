@@ -527,6 +527,20 @@
   margin:14px auto 2px;
   box-shadow:0 10px 24px rgba(0,0,0,.10);
 }
+/* FAQ answer card: add safe padding + keep it centered */
+.faqs .acc-b{
+  display:inline-block;       /* hug the text, not full-width */
+  padding:22px 28px;          /* more inner space so corners don't touch */
+  margin:16px auto 8px;       /* center under the question */
+  background:#fff;
+  color:#0b1220;
+  border:1px solid var(--ring);
+  border-radius:16px;
+  max-width:900px;            /* comfortable width cap */
+  width:auto;
+  box-shadow:0 10px 24px rgba(0,0,0,.10);
+  overflow-wrap:anywhere;     /* avoid overflow on long words */
+}
 
 
   </style>
