@@ -398,6 +398,24 @@
       content:""; position:absolute; left:0; top:0.68em; width:10px; height:10px; border-radius:50%;
       background:#111827; opacity:.95; transform:translateY(-50%);
     }
+    /* Hide the dark ribbon if there's no text inside it */
+.student-ribbon:empty{ display:none; }
+
+/* Softer fade when ribbon is used */
+.student-ribbon{
+  background: linear-gradient(180deg, rgba(2,6,23,0) 0%, rgba(2,6,23,.35) 55%, rgba(2,6,23,.6) 100%);
+}
+
+/* FAQ styling (dropdown cards) */
+.faqs .accordion{ margin:10px 0; border-radius:14px; overflow:hidden; }
+.faqs .acc-h{ background:#0B112D; color:#fff; border:1px solid #0E1435; }
+.faqs .acc-h .toggle{ color:#fff; }
+.faqs .acc-b{ background:#fff; border:1px solid var(--ring); border-top:0; }
+.faqs .acc-b p, .faqs .acc-b li{ margin:8px 0; }
+
+/* Footer copyright — small & subtle */
+.footer .bar{ font-size:12px; color:#cbd5e1; }
+
   </style>
 </head>
 <body>
@@ -1284,5 +1302,11 @@ If we miss a promise, <span class="hl-yellow">you don’t pay for it.</span>
       });
     });
   </script>
+  <footer class="footer">
+  <div class="bar">
+    © 2017–2025 iiTuitions Hub LLP — All rights reserved • Registered under Ministry of Corporate Affairs, Govt. of India
+  </div>
+</footer>
+
 </body>
 </html>
