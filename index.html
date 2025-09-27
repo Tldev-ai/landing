@@ -71,6 +71,37 @@
     .section-title{font-size:24px;font-weight:900;text-align:center;margin:24px 0 12px}
 
     /* Steps & panels */
+    /* Steps overview — vertical with + separators */
+.steps-overview{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin:10px 0 18px;
+}
+.ovr{
+  display:flex; align-items:center; gap:12px;
+  background:#0B112D;          /* dark blue */
+  color:#fff;                   /* white text */
+  border:0; border-radius:16px;
+  padding:16px 18px;
+  box-shadow:0 12px 28px var(--shadow1);
+  font-weight:900;
+}
+.ovr .num{
+  width:36px; height:36px; flex:0 0 36px;
+  display:grid; place-items:center;
+  border-radius:999px;
+  background:#0f172a; color:#fff; /* keeps the badge dark */
+  font-size:16px; font-weight:900;
+  line-height:1;
+}
+.plus{
+  display:flex; justify-content:center; align-items:center;
+  font-weight:900; font-size:32px; line-height:1;
+  color:#0B112D;                 /* dark blue plus */
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.08));
+}
+
     .process{padding:8px 0 18px}
     .steps{display:grid;gap:8px;max-width:1000px;margin:0 auto}
     .step-wrap{
@@ -384,11 +415,15 @@
     <div class="container">
       <h2 class="section-title">Our 4 Steps Success Formula</h2>
       <div class="steps-overview">
-  <div class="ovr"><span class="num">1</span>Know Exactly Where Your Child Stands</div>
-  <div class="ovr"><span class="num">2</span>Get Your Child’s Personalised IIT Success Roadmap</div>
-  <div class="ovr"><span class="num">3</span>100% Personalised 1-on-1 Mentorship — No Batches. No Distractions. ✅</div>
-  <div class="ovr"><span class="num">4</span>We Track and Improve Performance in Real Time</div>
+  <div class="ovr"><span class="num">1</span><span>Know Exactly Where Your Child Stands</span></div>
+  <div class="plus">+</div>
+  <div class="ovr"><span class="num">2</span><span>Get Your Child’s Personalised IIT Success Roadmap</span></div>
+  <div class="plus">+</div>
+  <div class="ovr"><span class="num">3</span><span>100% Personalised 1-on-1 Mentorship — No Batches. No Distractions. ✅</span></div>
+  <div class="plus">+</div>
+  <div class="ovr"><span class="num">4</span><span>We Track and Improve Performance in Real Time</span></div>
 </div>
+
 
 
       <div class="steps">
@@ -633,27 +668,7 @@
         font-size: 14px;
         backdrop-filter: blur(4px);
       }
-      .steps-overview{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:8px;
-  margin:8px 0 14px;
-}
-@media(min-width:720px){
-  .steps-overview{ grid-template-columns:1fr 1fr; }
-}
-.ovr{
-  display:flex; align-items:center; gap:10px;
-  background:#fff; border:1px solid var(--ring); border-radius:14px;
-  padding:12px; box-shadow:0 6px 18px var(--shadow1);
-  font-weight:800; color:#0b1220;
-}
-.ovr .num{
-  width:28px; height:28px; flex:0 0 28px;
-  display:grid; place-items:center;
-  border-radius:999px; background:#0f172a; color:#fff;
-  font-size:14px; font-weight:900;
-}
+      
 
     </style>
 
