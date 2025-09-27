@@ -412,6 +412,31 @@
 .faqs .acc-h .toggle{ color:#fff; }
 .faqs .acc-b{ background:#fff; border:1px solid var(--ring); border-top:0; }
 .faqs .acc-b p, .faqs .acc-b li{ margin:8px 0; }
+    /* FAQs: limit width, center the cards, and center the question text */
+.faqs .accordion{
+  max-width: 980px;          /* keep each card from stretching too long */
+  margin: 14px auto;         /* center horizontally + small gap between FAQs */
+}
+
+/* center the question text (caret stays on the right) */
+.faqs .acc-h{
+  justify-content: center;
+  text-align: center;
+  position: relative;        /* for the caret positioning */
+  padding-right: 44px;       /* room for the caret */
+}
+.faqs .acc-h .toggle{
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);                 /* keep caret vertically centered */
+  transition: transform .2s ease;
+}
+.faqs .accordion.open .acc-h .toggle{
+  transform: translateY(-50%) rotate(180deg);  /* rotate without jumping */
+}
+
+    
     /* FAQs: make panel text black + add gap between items */
 .faqs .acc-b{ color:#0b1220; }                              /* body text black */
 .faqs .acc-b p, .faqs .acc-b li, .faqs .acc-b b,
