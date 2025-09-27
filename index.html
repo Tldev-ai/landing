@@ -412,6 +412,13 @@
 .faqs .acc-h .toggle{ color:#fff; }
 .faqs .acc-b{ background:#fff; border:1px solid var(--ring); border-top:0; }
 .faqs .acc-b p, .faqs .acc-b li{ margin:8px 0; }
+    /* FAQs: make panel text black + add gap between items */
+.faqs .acc-b{ color:#0b1220; }                              /* body text black */
+.faqs .acc-b p, .faqs .acc-b li, .faqs .acc-b b,
+.faqs .acc-b strong{ color:#0b1220; }                       /* ensure all text is black */
+.faqs .acc-b .bullets li::before{ background:#0b1220; }     /* black bullet dots */
+.faqs .accordion{ margin:14px 0; }                          /* a little gap between FAQs */
+
 
 /* Footer copyright — small & subtle */
 .footer .bar{ font-size:12px; color:#cbd5e1; }
