@@ -231,11 +231,13 @@
       box-shadow:0 12px 28px rgba(0,0,0,.08);
     }
     .student-photo{
-      position:relative;width:100%;
-      aspect-ratio: 16/12;
-      background-size:cover;background-position:center;
-      border-bottom:1px solid #eef2f7;
-    }
+  position:relative;width:100%;
+  aspect-ratio: 16/12;               /* keeps same card height */
+  background-size: cover;
+  background-position: 50% var(--focusY, 30%); /* 👈 push image down a bit */
+  border-bottom:1px solid #eef2f7;
+}
+
     .student-ribbon{
       position:absolute;left:0;right:0;bottom:0;
       padding:16px 18px;
@@ -731,7 +733,7 @@
         <div class="carousel" aria-label="Topper stories">
           <!-- Card 1 -->
           <article class="student-card">
-            <div class="student-photo" style="background-image:url('stu11.png');">
+            style="--focusY: 22%; background-image:url('stu11.png');">
               <div class="student-ribbon">
                 <div class="student-name">Sri Charan</div>
                 <div class="student-score">AIR 23 · 99.7%</div>
@@ -745,7 +747,7 @@
 
           <!-- Card 2 (fixed style attr) -->
           <article class="student-card">
-            <div class="student-photo" style="background-image:url('stu22.png');">
+            style="--focusY: 24%; background-image:url('stu22.png');">
               <div class="student-ribbon">
                 <div class="student-name">Yashwitha</div>
                 <div class="student-score">IIT Delhi Admit</div>
@@ -759,7 +761,7 @@
 
           <!-- Card 3 -->
           <article class="student-card">
-            <div class="student-photo" style="background-image:url('stu33.png');">
+            style="--focusY: 20%; background-image:url('stu33.png');">
               <div class="student-ribbon">
                 <div class="student-name">Arjun Sharma</div>
                 <div class="student-score">AIR 45 · 94% Maths</div>
