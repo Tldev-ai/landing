@@ -157,6 +157,19 @@
       line-height:1.2;
       box-shadow:0 0 0 1px rgba(0,0,0,0.02) inset;
     }
+    /* reusable yellow highlight strip */
+.hl-yellow{
+  background:#ffeb66;
+  color:#0b1220;               /* keep text dark for contrast */
+  padding:2px 8px;
+  border-radius:8px;
+  font-weight:900;
+  box-shadow:0 0 0 1px rgba(0,0,0,0.02) inset;
+}
+    /* yellow text (no background strip) */
+.text-yellow{ color:#ffeb66; }
+
+
 
     .muted{color:#475569;font-size:14px;margin-bottom:8px}
     .bullets{margin-left:18px}
@@ -231,6 +244,13 @@
       box-shadow:0 12px 28px rgba(0,0,0,.08);
        position: relative;
     }
+    /* Names shown under the image (not on the ribbon) */
+.student-body .student-name{
+  font-weight:900; font-size:22px; color:#0b1220; margin:0 0 6px;
+}
+/* If any name is still inside the ribbon by mistake, hide it there */
+.student-ribbon .student-name{ display:none; }
+
     .student-photo{
   position:relative;width:100%;
   aspect-ratio: 16/12;               /* keeps same card height */
@@ -703,6 +723,16 @@
 @media (min-width:768px){
   .section-sub{ font-size:28px; margin:10px 0 16px; }
 }
+      /* Make the "Is this an exam?" header blue with white text */
+#examAcc{ border:0; border-radius:14px; overflow:hidden; }
+#examAcc .acc-h{
+  background:#0B112D;     /* your site’s dark blue */
+  color:#fff;
+  border:1px solid #0E1435;
+}
+#examAcc .acc-h .toggle{ color:#fff; }
+#examAcc .acc-b{ border:1px solid var(--ring); border-top:0; }
+
 
 
     </style>
@@ -743,42 +773,41 @@
         <div class="carousel" aria-label="Topper stories">
           <!-- Card 1 -->
           <!-- Card 1 -->
-<article class="student-card">
+   <article class="student-card">
   <div class="student-photo" style="--focusY:22%; background-image:url('stu11.png');"></div>
   <div class="student-ribbon">
-    <div class="student-name">Sri Charan</div>
-    
   </div>
   <div class="student-body">
+    <div class="student-name">Sri Charan</div>
     <div class="student-univ">IIT Bombay (Computer Science)</div>
     <div class="student-quote">“Physics 45% → 96% with targeted mentoring, micro-tests and weekly parent reviews.”</div>
   </div>
 </article>
 
-<!-- Card 2 -->
+
 <article class="student-card">
   <div class="student-photo" style="--focusY:24%; background-image:url('stu22.png');"></div>
   <div class="student-ribbon">
-    <div class="student-name">Yashwitha</div>
     <div class="student-score">NIT Delhi Admit</div>
   </div>
   <div class="student-body">
+    <div class="student-name">Yashwitha</div>
     <div class="student-univ">IIT Delhi</div>
     <div class="student-quote">“Daily reviews → strong consistency. Doubt support + sprint drills fixed accuracy.”</div>
   </div>
 </article>
 
-<!-- Card 3 -->
+
 <article class="student-card">
   <div class="student-photo" style="--focusY:20%; background-image:url('stu33.png');"></div>
-  <div class="student-ribbon">
-    <div class="student-name">Arjun Sharma</div>
-  </div>
+  <div class="student-ribbon"></div>
   <div class="student-body">
+    <div class="student-name">Arjun Sharma</div>
     <div class="student-univ">IIT Madras</div>
     <div class="student-quote">“Sprint drills + precise feedback → 52% to 94%. Course corrections every 2 weeks.”</div>
   </div>
 </article>
+
 
         </div>
       </div>
@@ -803,7 +832,8 @@
 
           <ul class="f-points">
             <li><span class="icon">🎓</span><b>100% 1-on-1 classes</b> with IIT/NIT mentors</li>
-            <li><span class="icon">🎯</span><b>Only 50 students/year</b> = quality over quantity</li>
+            <li><span class="icon">🎯</span><b><span class="text-yellow">Only 50 students/year</span></b> = quality over quantity</li>
+
             <li><span class="icon">📞</span><b>Weekly parent reviews</b> • instant strategy corrections</li>
           </ul>
 
@@ -893,6 +923,7 @@
     #reviews, #reviews *{ color:#0b1220 !important; }
     #reviews .stars, #reviews .rev-stars{ color:#facc15 !important; }
     #reviews .btn-wa{ color:#fff !important; }
+    
   </style>
 
   <section id="reviews">
@@ -1124,7 +1155,9 @@
         </div>
         <div class="g-row">
           <div class="g-left"><span class="g-ico">🎥</span><div class="g-h">Commitment Fulfillment</div></div>
-          <div class="g-copy">Every session is <span class="strong">recorded</span>, reviewed, and shared in weekly parent updates. If we miss a promise, <span class="strong">you don’t pay for it.</span></div>
+          <div class="g-copy">Every session is <span class="strong">recorded</span>, reviewed, and shared in weekly parent updates. 
+If we miss a promise, <span class="hl-yellow">you don’t pay for it.</span>
+
         </div>
       </div>
     </div>
@@ -1143,6 +1176,16 @@
     #final-cta h2{ font-size:clamp(26px,6vw,44px); line-height:1.15; font-weight:900; margin-bottom:10px; }
     #final-cta p.lead{ opacity:.92; max-width:780px; margin:0 auto 16px; font-size:clamp(15px,3.2vw,18px); }
     .cta-btn{ display:inline-flex; gap:10px; align-items:center; justify-content:center; padding:16px 28px; border-radius:999px; background:#000; color:#fff; font-weight:900; font-size:18px; border:2px solid rgba(255,255,255,0.15); box-shadow:0 14px 34px rgba(0,0,0,.35); transition:all .2s ease; }
+    /* Make final CTA button WhatsApp green */
+.final-dark .cta-btn{
+  background: var(--wa);
+  border-color:#1fbf57;
+  color:#fff;
+}
+.final-dark .cta-btn:hover{
+  background:#20BA5A;
+}
+
     .cta-btn:hover{ background:#111; transform:scale(1.04); }
     .about{ opacity:.85; max-width:760px; margin:18px auto 0; line-height:1.7; text-align:center; }
     .float-btn{ position:fixed; z-index:60; bottom:16px; display:flex; align-items:center; justify-content:center; font-weight:900; box-shadow:0 8px 24px rgba(0,0,0,0.25); cursor:pointer; transition:all 0.2s ease; }
