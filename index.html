@@ -108,6 +108,22 @@
 }
 
     .process{padding:8px 0 18px}
+    .process{padding:8px 0 18px}
+
+/* Steps static image banner */
+.process .steps-banner{
+  display:flex;
+  justify-content:center;
+  margin:10px 0 28px;
+}
+.process .steps-banner img{
+  width:100%;
+  max-width:1000px;
+  border-radius:16px;
+  border:1px solid var(--ring);
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
     .steps{display:grid;gap:8px;max-width:1000px;margin:0 auto}
     .step-wrap{
       background:#fff;
@@ -605,19 +621,17 @@
   </section>
 
   <!-- PROCESS -->
-  <section class="process" id="process">
-    <div class="container">
-      <h2 class="section-title">Our 4 Steps Success Formula</h2>
-      <div class="steps-overview">
-  <div class="ovr"><span class="num">1</span><span>Know Exactly Where Your Child Stands</span></div>
-  <div class="plus">+</div>
-  <div class="ovr"><span class="num">2</span><span>Get Your Child’s Personalised IIT Success Roadmap</span></div>
-  <div class="plus">+</div>
-  <div class="ovr"><span class="num">3</span><span>100% Personalised 1-on-1 Mentorship — No Batches. No Distractions. ✅</span></div>
-  <div class="plus">+</div>
-  <div class="ovr"><span class="num">4</span><span>We Track and Improve Performance in Real Time</span></div>
-</div>
-</div>  <!-- closes .steps-overview -->
+<section class="process" id="process">
+  <div class="container">
+    <h2 class="section-title">Our 4 Steps Success Formula</h2>
+
+    <!-- Steps image instead of the 4 pills -->
+    <div class="steps-banner">
+      <img src="sus.png" alt="Our 4 Steps Success Formula" loading="lazy">
+    </div>
+  </div> <!-- closes .container -->
+
+
 <h3 class="section-sub" id="how-it-works">How It Works</h3>
 <div class="steps">
 
