@@ -531,6 +531,30 @@
 
 
   </style>
+  <style>
+/* FAQ fix: don't clip the white card and make it fit the parent */
+.faqs .accordion{ 
+  overflow: visible;             /* override the global overflow:hidden */
+}
+
+.faqs .acc-b{
+  display: none;                 /* hidden until opened */
+  width: 100%;                   /* fit parent width */
+  max-width: 900px;              /* cap on wide screens */
+  margin: 16px auto 8px;
+  padding: 22px 28px;
+  background:#fff;
+  color:#0b1220;
+  border:1px solid var(--ring);
+  border-radius:16px;
+  box-shadow:0 10px 24px rgba(0,0,0,.10);
+  overflow-wrap:anywhere;
+}
+
+/* when opened, show the body */
+.accordion.open .acc-b{ display:block; }
+</style>
+
 </head>
 <body>
   <!-- Header -->
@@ -1402,6 +1426,7 @@ If we miss a promise, <span class="hl-yellow">you don’t pay for it.</span>
 
   </div>
 </section>
+      
 
     </div>
   </section>
