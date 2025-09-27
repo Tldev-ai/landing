@@ -72,7 +72,7 @@
 
     /* Steps & panels */
     .process{padding:8px 0 18px}
-    .steps{display:grid;gap:22px;max-width:1000px;margin:0 auto}
+    .steps{display:grid;gap:8px;max-width:1000px;margin:0 auto}
     .step-wrap{
       background:#fff;
       border:1px solid var(--ring);
@@ -82,15 +82,7 @@
     }
     .step-wrap > .step{border:none;box-shadow:none;padding:0;background:transparent}
     .step-wrap > .how-panel{margin-top:12px}
-    .plus-sep{
-      display:flex;align-items:center;justify-content:center;
-      font-weight:900;line-height:1;
-      font-size:clamp(26px,5vw,44px);
-      margin:12px 0;
-      color:#0b1220;
-      filter:drop-shadow(0 4px 12px rgba(0,0,0,.08));
-    }
-
+    
     .step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--ring);border-radius:16px;padding:14px;box-shadow:0 10px 26px var(--shadow1)}
     .step .num{
       width:44px;
@@ -146,12 +138,7 @@
     .accordion.open .acc-b{display:block}
     .accordion.open .toggle{transform:rotate(180deg)}
     .toggle{transition:.2s}
-    #examAcc, #scenarioAcc { margin-bottom:24px; }
-    #assessment-details { margin-bottom:22px; }
-    #roadmap-details { margin-bottom:28px; }
-    #mentorship-details { margin-bottom:32px; }
-    #scenarioAcc { margin-bottom: 28px; }
-
+    
     /* Guarantee badge */
     .guarantee-badge{
       display:inline-flex;align-items:center;gap:10px;
@@ -396,6 +383,13 @@
   <section class="process" id="process">
     <div class="container">
       <h2 class="section-title">Our 4 Steps Success Formula</h2>
+      <div class="steps-overview">
+  <div class="ovr"><span class="num">1</span>Know Exactly Where Your Child Stands</div>
+  <div class="ovr"><span class="num">2</span>Get Your Child’s Personalised IIT Success Roadmap</div>
+  <div class="ovr"><span class="num">3</span>100% Personalised 1-on-1 Mentorship — No Batches. No Distractions. ✅</div>
+  <div class="ovr"><span class="num">4</span>We Track and Improve Performance in Real Time</div>
+</div>
+
 
       <div class="steps">
         <!-- Step 1 -->
@@ -639,6 +633,28 @@
         font-size: 14px;
         backdrop-filter: blur(4px);
       }
+      .steps-overview{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:8px;
+  margin:8px 0 14px;
+}
+@media(min-width:720px){
+  .steps-overview{ grid-template-columns:1fr 1fr; }
+}
+.ovr{
+  display:flex; align-items:center; gap:10px;
+  background:#fff; border:1px solid var(--ring); border-radius:14px;
+  padding:12px; box-shadow:0 6px 18px var(--shadow1);
+  font-weight:800; color:#0b1220;
+}
+.ovr .num{
+  width:28px; height:28px; flex:0 0 28px;
+  display:grid; place-items:center;
+  border-radius:999px; background:#0f172a; color:#fff;
+  font-size:14px; font-weight:900;
+}
+
     </style>
 
     <div class="container">
