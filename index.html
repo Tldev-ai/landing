@@ -465,6 +465,69 @@
 
 /* Footer copyright — small & subtle */
 .footer .bar{ font-size:12px; color:#cbd5e1; }
+    /* ===== FAQ: remove the question containers, keep centered text ===== */
+#faqs .final-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* kill the pill/card on the wrapper itself */
+.faqs .accordion{
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  display:block;          /* override any inline-block from before */
+  width:100%;
+  max-width:none;         /* override old 980px cap */
+  margin:10px 0;
+}
+
+/* the clickable question row: just text, centered */
+.faqs .acc-h{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  background:transparent;
+  border:0;
+  color:#fff;
+  padding:14px 56px 14px 20px;  /* space for caret */
+  margin:0 auto;                /* center the row */
+  position:relative;
+  text-align:center;
+}
+.faqs .acc-h span:first-child{ white-space:nowrap; } /* keep one-line text */
+
+/* caret stays on the right */
+.faqs .acc-h .toggle{
+  position:absolute; right:16px; top:50%;
+  transform:translateY(-50%);
+  transition:transform .2s ease;
+  color:#fff;
+}
+.faqs .accordion.open .acc-h .toggle{
+  transform:translateY(-50%) rotate(180deg);
+}
+
+/* subtle divider under each question */
+.faqs .acc-h::after{
+  content:""; position:absolute; left:0; right:0; bottom:-10px; height:1px;
+  background:rgba(255,255,255,.12);
+}
+
+/* the answer stays as a white card with black text */
+.faqs .acc-b{
+  background:#fff;
+  color:#0b1220;
+  border:1px solid var(--ring);
+  border-radius:14px;
+  padding:16px;
+  width:min(980px,96vw);
+  margin:14px auto 2px;
+  box-shadow:0 10px 24px rgba(0,0,0,.10);
+}
+
 
   </style>
 </head>
