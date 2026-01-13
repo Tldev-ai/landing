@@ -1,7 +1,7 @@
 {
   "routes": [
     {
-      "src": "/tutorregistration\\.htm",
+      "src": "^/tutorregistration\\.htm$",
       "dest": "/tutorregistration.html"
     }
   ]
