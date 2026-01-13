@@ -1,9 +1,8 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/tutorregistration.htm",
-      "destination": "/tutorregistration.html",
-      "permanent": false
+      "destination": "/tutorregistration.html"
     }
   ]
 }
