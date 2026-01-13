@@ -1,8 +1,9 @@
 {
-  "routes": [
+  "redirects": [
     {
-      "src": "^/tutorregistration\\.htm$",
-      "dest": "/tutorregistration.html"
+      "source": "/tutorregistration.htm",
+      "destination": "/tutorregistration.html",
+      "permanent": false
     }
   ]
 }
